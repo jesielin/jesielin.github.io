@@ -105,11 +105,11 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        12
+        14
         <span>文章</span>
       </div>
       <div class="article-info-block">
-        8
+        11
         <span>标签</span>
       </div>
     </div>
@@ -132,7 +132,7 @@ ga('send', 'pageview');
 
       
       <section id="main">
-      <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-wiki/cmd-markdown" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -141,7 +141,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/10/first/">第一篇啊</a>
+      <a class="article-title" href="/2015/08/30/wiki/cmd-markdown/">［转载］Cmd Markdown 语法</a>
     </h1>
   
 
@@ -149,7 +149,206 @@ ga('send', 'pageview');
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/03/10/first/">
+    <a href="/2015/08/30/wiki/cmd-markdown/">
+      <time datetime="2015-08-30T05:49:07.000Z" itemprop="datePublished">2015-08-30</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/wiki/">wiki</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>(部分功能并不是markdown原生语法功能，所以未能实现效果)</p>
+<hr>
+<p>我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，<strong>Cmd Markdown</strong> 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可以使用 Cmd Markdown：</p>
+<blockquote>
+<ul>
+<li>整理知识，学习笔记</li>
+<li>发布日记，杂文，所见所想</li>
+<li>撰写发布技术文稿（代码支持）</li>
+<li>撰写发布学术论文（LaTeX 公式支持）</li>
+</ul>
+</blockquote>
+<p><img src="https://www.zybuluo.com/static/img/logo.png" alt="cmd-markdown-logo"></p>
+<p>除了您现在看到的这个 Cmd Markdown 在线版本，您还可以前往以下网址下载：</p>
+<h3 id="Windows/Mac/Linux_全平台客户端"><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">Windows/Mac/Linux 全平台客户端</a></h3><blockquote>
+<p>请保留此份 Cmd Markdown 的欢迎稿兼使用说明，如需撰写新稿件，点击顶部工具栏右侧的 <i class="icon-file"></i> <strong>新文稿</strong> 或者使用快捷键 <code>Ctrl+Alt+N</code>。</p>
+</blockquote>
+<hr>
+<h2 id="什么是_Markdown">什么是 Markdown</h2><p>Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong> 或者 <em>斜体</em> 某些文字，更棒的是，它还可以</p>
+<h3 id="1-_制作一份待办事宜_Todo_列表">1. 制作一份待办事宜 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#13-待办事宜-todo-列表" target="_blank" rel="external">Todo 列表</a></h3><ul>
+<li>[ ] 支持以 PDF 格式导出文稿</li>
+<li>[ ] 改进 Cmd 渲染算法，使用局部渲染技术提高渲染效率</li>
+<li>[x] 新增 Todo 列表功能</li>
+<li>[x] 修复 LaTex 公式渲染问题</li>
+<li>[x] 新增 LaTex 公式编号功能</li>
+</ul>
+<h3 id="2-_书写一个质能守恒公式[^LaTeX]">2. 书写一个质能守恒公式[^LaTeX]</h3><p>$$E=mc^2$$</p>
+<h3 id="3-_高亮一段代码[^code]">3. 高亮一段代码[^code]</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="decorator">@requires_authorization</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># A comment</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'hello world'</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-_高效绘制_流程图">4. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#7-流程图" target="_blank" rel="external">流程图</a></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">st=&#62;start: Start&#10;op=&#62;operation: Your Operation&#10;cond=&#62;condition: Yes or No?&#10;e=&#62;end&#10;&#10;st-&#62;op-&#62;cond&#10;cond(yes)-&#62;e&#10;cond(no)-&#62;op</span><br></pre></td></tr></table></figure>
+<h3 id="5-_高效绘制_序列图">5. 高效绘制 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#8-序列图" target="_blank" rel="external">序列图</a></h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alice-&#62;Bob: Hello Bob, how are you?&#10;Note right of Bob: Bob thinks&#10;Bob--&#62;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<h3 id="6-_绘制表格">6. 绘制表格</h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>计算机</td>
+<td style="text-align:right">\$1600</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td>手机</td>
+<td style="text-align:right">\$12</td>
+<td style="text-align:center">12</td>
+</tr>
+<tr>
+<td>管线</td>
+<td style="text-align:right">\$1</td>
+<td style="text-align:center">234</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-_更详细语法说明">7. 更详细语法说明</h3><p>想要查看更详细的语法说明，可以参考我们准备的 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown" target="_blank" rel="external">Cmd Markdown 简明语法手册</a>，进阶用户可以参考 <a href="https://www.zybuluo.com/mdeditor?url=https://www.zybuluo.com/static/editor/md-help.markdown#cmd-markdown-高阶语法手册" target="_blank" rel="external">Cmd Markdown 高阶语法手册</a> 了解更多高级功能。</p>
+<p>总而言之，不同于其它 <em>所见即所得</em> 的编辑器：你只需使用键盘专注于书写文本内容，就可以生成印刷级的排版格式，省却在键盘和工具栏之间来回切换，调整内容和格式的麻烦。<strong>Markdown 在流畅的书写和印刷级的阅读体验之间找到了平衡。</strong> 目前它已经成为世界上最大的技术分享网站 GitHub 和 技术问答网站 StackOverFlow 的御用书写格式。</p>
+<hr>
+<h2 id="什么是_Cmd_Markdown">什么是 Cmd Markdown</h2><p>您可以使用很多工具书写 Markdown，但是 Cmd Markdown 是这个星球上我们已知的、最好的 Markdown 工具——没有之一 ：）因为深信文字的力量，所以我们和你一样，对流畅书写，分享思想和知识，以及阅读体验有极致的追求，我们把对于这些诉求的回应整合在 Cmd Markdown，并且一次，两次，三次，乃至无数次地提升这个工具的体验，最终将它演化成一个 <strong>编辑/发布/阅读</strong> Markdown 的在线平台——您可以在任何地方，任何系统/设备上管理这里的文字。</p>
+<h3 id="1-_实时同步预览">1. 实时同步预览</h3><p>我们将 Cmd Markdown 的主界面一分为二，左边为<strong>编辑区</strong>，右边为<strong>预览区</strong>，在编辑区的操作会实时地渲染到预览区方便查看最终的版面效果，并且如果你在其中一个区拖动滚动条，我们有一个巧妙的算法把另一个区的滚动条同步到等价的位置，超酷！</p>
+<h3 id="2-_编辑工具栏">2. 编辑工具栏</h3><p>也许您还是一个 Markdown 语法的新手，在您完全熟悉它之前，我们在 <strong>编辑区</strong> 的顶部放置了一个如下图所示的工具栏，您可以使用鼠标在工具栏上调整格式，不过我们仍旧鼓励你使用键盘标记格式，提高书写的流畅度。</p>
+<p><img src="https://www.zybuluo.com/static/img/toolbar-editor.png" alt="tool-editor"></p>
+<h3 id="3-_编辑模式">3. 编辑模式</h3><p>完全心无旁骛的方式编辑文字：点击 <strong>编辑工具栏</strong> 最右测的拉伸按钮或者按下 <code>Ctrl + M</code>，将 Cmd Markdown 切换到独立的编辑模式，这是一个极度简洁的写作环境，所有可能会引起分心的元素都已经被挪除，超清爽！</p>
+<h3 id="4-_实时的云端文稿">4. 实时的云端文稿</h3><p>为了保障数据安全，Cmd Markdown 会将您每一次击键的内容保存至云端，同时在 <strong>编辑工具栏</strong> 的最右侧提示 <code>已保存</code> 的字样。无需担心浏览器崩溃，机器掉电或者地震，海啸——在编辑的过程中随时关闭浏览器或者机器，下一次回到 Cmd Markdown 的时候继续写作。</p>
+<h3 id="5-_离线模式">5. 离线模式</h3><p>在网络环境不稳定的情况下记录文字一样很安全！在您写作的时候，如果电脑突然失去网络连接，Cmd Markdown 会智能切换至离线模式，将您后续键入的文字保存在本地，直到网络恢复再将他们传送至云端，即使在网络恢复前关闭浏览器或者电脑，一样没有问题，等到下次开启 Cmd Markdown 的时候，她会提醒您将离线保存的文字传送至云端。简而言之，我们尽最大的努力保障您文字的安全。</p>
+<h3 id="6-_管理工具栏">6. 管理工具栏</h3><p>为了便于管理您的文稿，在 <strong>预览区</strong> 的顶部放置了如下所示的 <strong>管理工具栏</strong>：</p>
+<p><img src="https://www.zybuluo.com/static/img/toolbar-manager.jpg" alt="tool-manager"></p>
+<p>通过管理工具栏可以：</p>
+<p><i class="icon-share"></i> 发布：将当前的文稿生成固定链接，在网络上发布，分享<br><i class="icon-file"></i> 新建：开始撰写一篇新的文稿<br><i class="icon-trash"></i> 删除：删除当前的文稿<br><i class="icon-cloud"></i> 导出：将当前的文稿转化为 Markdown 文本或者 Html 格式，并导出到本地<br><i class="icon-reorder"></i> 列表：所有新增和过往的文稿都可以在这里查看、操作<br><i class="icon-pencil"></i> 模式：切换 普通/Vim/Emacs 编辑模式</p>
+<h3 id="7-_阅读工具栏">7. 阅读工具栏</h3><p><img src="https://www.zybuluo.com/static/img/toolbar-reader.jpg" alt="tool-manager"></p>
+<p>通过 <strong>预览区</strong> 右上角的 <strong>阅读工具栏</strong>，可以查看当前文稿的目录并增强阅读体验。</p>
+<p>工具栏上的五个图标依次为：</p>
+<p><i class="icon-list"></i> 目录：快速导航当前文稿的目录结构以跳转到感兴趣的段落<br><i class="icon-chevron-sign-left"></i> 视图：互换左边编辑区和右边预览区的位置<br><i class="icon-adjust"></i> 主题：内置了黑白两种模式的主题，试试 <strong>黑色主题</strong>，超炫！<br><i class="icon-desktop"></i> 阅读：心无旁骛的阅读模式提供超一流的阅读体验<br><i class="icon-fullscreen"></i> 全屏：简洁，简洁，再简洁，一个完全沉浸式的写作和阅读环境</p>
+<h3 id="8-_阅读模式">8. 阅读模式</h3><p>在 <strong>阅读工具栏</strong> 点击 <i class="icon-desktop"></i> 或者按下 <code>Ctrl+Alt+M</code> 随即进入独立的阅读模式界面，我们在版面渲染上的每一个细节：字体，字号，行间距，前背景色都倾注了大量的时间，努力提升阅读的体验和品质。</p>
+<h3 id="9-_标签、分类和搜索">9. 标签、分类和搜索</h3><p>在编辑区任意行首位置输入以下格式的文字可以标签当前文档：</p>
+<p>标签： 未分类</p>
+<p>标签以后的文稿在【文件列表】（Ctrl+Alt+F）里会按照标签分类，用户可以同时使用键盘或者鼠标浏览查看，或者在【文件列表】的搜索文本框内搜索标题关键字过滤文稿，如下图所示：</p>
+<p><img src="https://www.zybuluo.com/static/img/file-list.png" alt="file-list"></p>
+<h3 id="10-_文稿发布和分享">10. 文稿发布和分享</h3><p>在您使用 Cmd Markdown 记录，创作，整理，阅读文稿的同时，我们不仅希望它是一个有力的工具，更希望您的思想和知识通过这个平台，连同优质的阅读体验，将他们分享给有相同志趣的人，进而鼓励更多的人来到这里记录分享他们的思想和知识，尝试点击 <i class="icon-share"></i> (Ctrl+Alt+P) 发布这份文档给好友吧！</p>
+<hr>
+<p>再一次感谢您花费时间阅读这份欢迎稿，点击 <i class="icon-file"></i> (Ctrl+Alt+N) 开始撰写新的文稿吧！祝您在这里记录、阅读、分享愉快！</p>
+<p>作者 <a href="http://weibo.com/ghosert" target="_blank" rel="external">@ghosert</a><br>2015 年 06月 15日    </p>
+<p>[^LaTeX]: 支持 <strong>LaTeX</strong> 编辑显示支持，例如：$\sum_{i=1}^n a_i=0$， 访问 <a href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference" target="_blank" rel="external">MathJax</a> 参考更多使用方法。</p>
+<p>[^code]: 代码高亮功能支持包括 Java, Python, JavaScript 在内的，<strong>四十一</strong>种主流编程语言。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/08/30/wiki/cmd-markdown/" data-id="cidyi8e010000kb4jd4aexavq" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/08/30/wiki/cmd-markdown/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wiki/">wiki</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
+      <article id="post-android/training/getting-started" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/30/android/training/getting-started/">Getting Started</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/08/30/android/training/getting-started/">
+      <time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Android-Training/">Android/Training</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <h2 id="Creating_an_Android_Project">Creating an Android Project</h2><hr>
+<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">Android Studio</a></strong>，那些还在用ADT不知道什么心态，google早就不支持了。</p>
+<h3 id="Android_Studio_创建项目">Android Studio 创建项目</h3><hr>
+<h4 id="1-创建新项目">1.创建新项目</h4><ul>
+<li>如果在欢迎界面，点击New Project</li>
+<li>如果在项目界面，点击File -&gt; New -&gt; New Project<br>都会弹出以下界面<br><img src="../../img/android-training-setup-01.png" alt="Android Training Setup 01"></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidy46wwq002no24jh3bsnbsh" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/08/30/android/training/getting-started/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
+      <article id="post-sketch/first" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/10/sketch/first/">第一篇啊</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/03/10/sketch/first/">
       <time datetime="2015-03-09T18:58:06.000Z" itemprop="datePublished">2015-03-10</time>
     </a>
   </div>
@@ -174,9 +373,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/03/10/first/" data-id="cidx0ogh4002eay4jxb12wq7l" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cidy46wwm0028o24jmt1810r5" class="article-share-link">分享到</a>
       
-        <a href="http://jesielin.github.io/2015/03/10/first/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://jesielin.github.io/2015/03/10/sketch/first/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -189,7 +388,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-is-dota-kidding" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-sketch/is-dota-kidding" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -198,7 +397,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/06/08/is-dota-kidding/">在这个年纪，打DOTA冲分有那么可笑么？</a>
+      <a class="article-title" href="/2014/06/08/sketch/is-dota-kidding/">在这个年纪，打DOTA冲分有那么可笑么？</a>
     </h1>
   
 
@@ -206,7 +405,7 @@ ga('send', 'pageview');
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2014/06/08/is-dota-kidding/">
+    <a href="/2014/06/08/sketch/is-dota-kidding/">
       <time datetime="2014-06-08T03:50:07.000Z" itemprop="datePublished">2014-06-08</time>
     </a>
   </div>
@@ -236,9 +435,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/06/08/is-dota-kidding/" data-id="cidx0ogh10027ay4joy0fffvx" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cidy46wwk0021o24jyho0vt9r" class="article-share-link">分享到</a>
       
-        <a href="http://jesielin.github.io/2014/06/08/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dota/">dota</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -251,7 +450,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-new-start" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-sketch/new-start" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -260,7 +459,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/20/new-start/">现在才刚刚开始</a>
+      <a class="article-title" href="/2014/05/20/sketch/new-start/">现在才刚刚开始</a>
     </h1>
   
 
@@ -268,7 +467,7 @@ ga('send', 'pageview');
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2014/05/20/new-start/">
+    <a href="/2014/05/20/sketch/new-start/">
       <time datetime="2014-05-20T15:46:19.000Z" itemprop="datePublished">2014-05-20</time>
     </a>
   </div>
@@ -294,9 +493,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/05/20/new-start/" data-id="cidx0oggr001lay4jmliuihdn" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cidy46wwd001qo24jfget8l6p" class="article-share-link">分享到</a>
       
-        <a href="http://jesielin.github.io/2014/05/20/new-start/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://jesielin.github.io/2014/05/20/sketch/new-start/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
@@ -309,7 +508,7 @@ ga('send', 'pageview');
 
 
     
-      <article id="post-young-man-swear" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-sketch/young-man-swear" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     
@@ -318,7 +517,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2013/11/26/young-man-swear/">青年记</a>
+      <a class="article-title" href="/2013/11/26/sketch/young-man-swear/">青年记</a>
     </h1>
   
 
@@ -326,7 +525,7 @@ ga('send', 'pageview');
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2013/11/26/young-man-swear/">
+    <a href="/2013/11/26/sketch/young-man-swear/">
       <time datetime="2013-11-26T06:13:46.000Z" itemprop="datePublished">2013-11-26</time>
     </a>
   </div>
@@ -351,130 +550,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2013/11/26/young-man-swear/" data-id="cidx0ogg8000eay4jqg44cg7q" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/" data-id="cidy46wvn000jo24jdlvgx78c" class="article-share-link">分享到</a>
       
-        <a href="http://jesielin.github.io/2013/11/26/young-man-swear/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ/">QQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-see-you-hangzhou" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/06/14/see-you-hangzhou/">杭州杭州，我就要离你而去</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2012/06/14/see-you-hangzhou/">
-      <time datetime="2012-06-14T10:16:15.000Z" itemprop="datePublished">2012-06-14</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <p>今天突然有人问我离校办好没，我才发现，要离开了。<br>杭州杭州，我就要离你而去，湖里的花儿都开好了吧，原谅我不肯再去看看你，因为不想找离别这种理由去见你<br>杭州杭州，我就要离你而去，有人说天津的路不够笔直，他们却没发现，你那蜿蜒的小径里渗出的乖巧与秀气<br>杭州杭州，我就要离你而去，还记得第一次晚上坐在西湖边，湖面没有想象中那样平静，不时泛起水花，细小的波澜总是倔强的对着我涌来，像是在对我诉说，如她这样的女子，也慢慢变得坚强，女儿尚且如此，那妈妈该是怎样的善良<br>杭州杭州，我就要离你而去，我知道每次雨季，都是你在哭泣，为那些不幸的人们，到处弥漫着浮躁，却没人发现一直是你在滋润着我们，雨水稀释了太多不安与喧嚣，让我还能在深夜闻闻江风的味道，那样亲切<br>杭州杭州，我就要离你而去，北方的孩子能在江南度过青春是件很幸福的事，一直在北方生活的人是没办法理解的，命运安排我来到这里找寻我第二个家，幸运的是，我不仅找到了，而且兄弟姐妹给了最多的温暖，从始至终<br>杭州杭州，我就要离你而去，不会说谢谢，就像不会说再见一样，我愿用最悲伤的话来换那些言语无法表达的幸福，只要你记得，只要你愿意<br>杭州杭州，我还会再回来，别人是来旅游，而我，是回家，骨子里透着骄傲，心里，怀揣温暖<br>杭州，杭州，杭州</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2012/06/14/see-you-hangzhou/" data-id="cidx0oggo001fay4jqkm7xs86" class="article-share-link">分享到</a>
-      
-        <a href="http://jesielin.github.io/2012/06/14/see-you-hangzhou/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ/">QQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-who-moved-my-strings" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2011/07/06/who-moved-my-strings/">谁动了我的琴弦</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2011/07/06/who-moved-my-strings/">
-      <time datetime="2011-07-05T18:39:12.000Z" itemprop="datePublished">2011-07-06</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <blockquote>
-<p>我想它从开始被遗弃在那个角落的时候就没有抱怨了，</p>
-<p>身上落满的灰尘，</p>
-<p>凌乱的琴弦，</p>
-<p>隔着1000公里，也能突然在梦开始的时候感觉到它的目光，</p>
-<p>或许命中注定，</p>
-<p>它要在那里静静的看着我，</p>
-<p>走过的一切，历历在目..</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2011/07/06/who-moved-my-strings/" data-id="cidx0oggf000ray4jchln2o0c" class="article-share-link">分享到</a>
-      
-        <a href="http://jesielin.github.io/2011/07/06/who-moved-my-strings/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ/">QQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
     </footer>
   </div>
@@ -485,7 +566,7 @@ ga('send', 'pageview');
 
     
       <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
       </nav>
     </section>
       
@@ -500,7 +581,43 @@ ga('send', 'pageview');
           <li>
             
             <div class="item-thumbnail">
-              <a href="/2015/03/10/first/" class="thumbnail">
+              <a href="/2015/08/30/wiki/cmd-markdown/" class="thumbnail">
+  
+    <span style="background-image:url(https://www.zybuluo.com/static/img/logo.png
+)" alt="［转载］Cmd Markdown 语法" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/wiki/">wiki</a></p>
+              <p class="item-title"><a href="/2015/08/30/wiki/cmd-markdown/" class="title">［转载］Cmd Markdown 语法</a></p>
+              <p class="item-date"><time datetime="2015-08-30T05:49:07.000Z" itemprop="datePublished">2015-08-30</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/30/android/training/getting-started/" class="thumbnail">
+  
+    <span style="background-image:url(/../../img/android-training-setup-01.png
+)" alt="Getting Started" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training/">Android/Training</a></p>
+              <p class="item-title"><a href="/2015/08/30/android/training/getting-started/" class="title">Getting Started</a></p>
+              <p class="item-date"><time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/10/sketch/first/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -509,7 +626,7 @@ ga('send', 'pageview');
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2015/03/10/first/" class="title">第一篇啊</a></p>
+              <p class="item-title"><a href="/2015/03/10/sketch/first/" class="title">第一篇啊</a></p>
               <p class="item-date"><time datetime="2015-03-09T18:58:06.000Z" itemprop="datePublished">2015-03-10</time></p>
             </div>
           </li>
@@ -517,7 +634,7 @@ ga('send', 'pageview');
           <li>
             
             <div class="item-thumbnail">
-              <a href="/2014/06/08/is-dota-kidding/" class="thumbnail">
+              <a href="/2014/06/08/sketch/is-dota-kidding/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -526,7 +643,7 @@ ga('send', 'pageview');
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2014/06/08/is-dota-kidding/" class="title">在这个年纪，打DOTA冲分有那么可笑么？</a></p>
+              <p class="item-title"><a href="/2014/06/08/sketch/is-dota-kidding/" class="title">在这个年纪，打DOTA冲分有那么可笑么？</a></p>
               <p class="item-date"><time datetime="2014-06-08T03:50:07.000Z" itemprop="datePublished">2014-06-08</time></p>
             </div>
           </li>
@@ -534,7 +651,7 @@ ga('send', 'pageview');
           <li>
             
             <div class="item-thumbnail">
-              <a href="/2014/05/20/new-start/" class="thumbnail">
+              <a href="/2014/05/20/sketch/new-start/" class="thumbnail">
   
     <span class="thumbnail-image thumbnail-none"></span>
   
@@ -543,42 +660,8 @@ ga('send', 'pageview');
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2014/05/20/new-start/" class="title">现在才刚刚开始</a></p>
+              <p class="item-title"><a href="/2014/05/20/sketch/new-start/" class="title">现在才刚刚开始</a></p>
               <p class="item-date"><time datetime="2014-05-20T15:46:19.000Z" itemprop="datePublished">2014-05-20</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2013/11/26/young-man-swear/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2013/11/26/young-man-swear/" class="title">青年记</a></p>
-              <p class="item-date"><time datetime="2013-11-26T06:13:46.000Z" itemprop="datePublished">2013-11-26</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2012/06/14/see-you-hangzhou/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2012/06/14/see-you-hangzhou/" class="title">杭州杭州，我就要离你而去</a></p>
-              <p class="item-date"><time datetime="2012-06-14T10:16:15.000Z" itemprop="datePublished">2012-06-14</time></p>
             </div>
           </li>
         
@@ -591,7 +674,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training/">Android/Training</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
     </div>
   </div>
 
@@ -600,7 +683,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Inside/" style="font-size: 10px;">Inside</a> <a href="/tags/QQ/" style="font-size: 16px;">QQ</a> <a href="/tags/day/" style="font-size: 12px;">day</a> <a href="/tags/dota/" style="font-size: 10px;">dota</a> <a href="/tags/night/" style="font-size: 14px;">night</a> <a href="/tags/past/" style="font-size: 18px;">past</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Inside/" style="font-size: 10px;">Inside</a> <a href="/tags/QQ/" style="font-size: 16px;">QQ</a> <a href="/tags/day/" style="font-size: 12px;">day</a> <a href="/tags/dota/" style="font-size: 10px;">dota</a> <a href="/tags/night/" style="font-size: 14px;">night</a> <a href="/tags/past/" style="font-size: 18px;">past</a> <a href="/tags/wiki/" style="font-size: 10px;">wiki</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/开发/" style="font-size: 10px;">开发</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
     </div>
   </div>
 
@@ -643,5 +726,35 @@ ga('send', 'pageview');
 <script src="/js/script.js" type="text/javascript"></script>
 
   </div>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </body>
 </html>
