@@ -6,31 +6,35 @@
   <title>Getting Started | 2015</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Creating an Android Project
- 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，那些还在用ADT不知道什么心态，google早就不支持了。
+ 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，以后简称AS，那些还在用ADT不知道什么心态，google早就不支持了。
 Android Studio 创建项目
 1.创建新项目
 如果在欢迎界面，点击New Project
-如果在项目界面，点击File -&amp;gt; New -&amp;gt; New Proj">
+如果在项目界面，点击File -&amp;gt; New -&amp;gt; N">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Getting Started">
 <meta property="og:url" content="http://jesielin.github.io/2015/08/30/android/training/getting-started/index.html">
 <meta property="og:site_name" content="2015">
 <meta property="og:description" content="Creating an Android Project
- 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，那些还在用ADT不知道什么心态，google早就不支持了。
+ 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，以后简称AS，那些还在用ADT不知道什么心态，google早就不支持了。
 Android Studio 创建项目
 1.创建新项目
 如果在欢迎界面，点击New Project
-如果在项目界面，点击File -&amp;gt; New -&amp;gt; New Proj">
-<meta property="og:image" content="http://jesielin.github.io/../../img/android-training-setup-01.png">
-<meta property="og:updated_time" content="2015-08-30T17:06:39.000Z">
+如果在项目界面，点击File -&amp;gt; New -&amp;gt; N">
+<meta property="og:image" content="http://jesielin.github.io/img/android-training-setup-01.png">
+<meta property="og:image" content="http://jesielin.github.io/img/android-training-setup-02.png">
+<meta property="og:image" content="http://jesielin.github.io/img/android-training-setup-03.png">
+<meta property="og:image" content="http://jesielin.github.io/img/android-training-setup-04.png">
+<meta property="og:image" content="http://jesielin.github.io/img/android-training-setup-05.png">
+<meta property="og:updated_time" content="2015-08-30T19:06:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Getting Started">
 <meta name="twitter:description" content="Creating an Android Project
- 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，那些还在用ADT不知道什么心态，google早就不支持了。
+ 顾名思义，这一章教你如何创建一个 Android项目，当然前提是你最好使用Android Studio，以后简称AS，那些还在用ADT不知道什么心态，google早就不支持了。
 Android Studio 创建项目
 1.创建新项目
 如果在欢迎界面，点击New Project
-如果在项目界面，点击File -&amp;gt; New -&amp;gt; New Proj">
+如果在项目界面，点击File -&amp;gt; New -&amp;gt; N">
   
   
     <link rel="icon" href="favicon.png">
@@ -151,6 +155,14 @@ ga('send', 'pageview');
       <section id="main"><article id="post-android/training/getting-started" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      
+	
+		<img src="/img/android-training-lesson1-banner.png" class="article-banner">
+	
+
+
+
+    
     
     
       <header class="article-header">
@@ -184,17 +196,27 @@ ga('send', 'pageview');
       
                 
         <h2 id="Creating_an_Android_Project">Creating an Android Project</h2><hr>
-<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">Android Studio</a></strong>，那些还在用ADT不知道什么心态，google早就不支持了。</p>
+<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">Android Studio</a></strong>，以后简称<code>AS</code>，那些还在用ADT不知道什么心态，google早就不支持了。</p>
 <h3 id="Android_Studio_创建项目">Android Studio 创建项目</h3><hr>
 <h4 id="1-创建新项目">1.创建新项目</h4><ul>
 <li>如果在欢迎界面，点击New Project</li>
-<li>如果在项目界面，点击File -&gt; New -&gt; New Project<br>都会弹出以下界面<br><img src="../../img/android-training-setup-01.png" alt="Android Training Setup 01"></li>
+<li>如果在项目界面，点击File -&gt; New -&gt; New Project<br>都会弹出以下界面<br><img src="/img/android-training-setup-01.png" alt="Android Training Setup 01"></li>
 </ul>
+<h4 id="2-填写相关项">2.填写相关项</h4><ul>
+<li>Application Name：项目名字，这里选用AndroidTrainingDemo</li>
+<li>Company Domain：公司域，AS会记忆这个字段</li>
+<li>Package Name：项目的包名，这个字段是根据以上两项组合而成，遵循Java机制<br><em><code>Your package name must be unique across all packages installed on the Android system.</code></em><br>生成的包名在用户机器上必须是唯一的，这也是保证将来APP上传到市场上时，唯一迭代的其中一个依据。</li>
+<li>Project Location：项目保存路径，看心情好了。<br>然后点击Next<br><img src="/img/android-training-setup-02.png" alt="Android Training Setup 02"></li>
+</ul>
+<h4 id="3-选择版本">3.选择版本</h4><p>这里有4个选项，Phone and Tablet，TV，Wear，Glass<br>我们选择第一个，也就是适配手机或者平板<br>这里选择的是支持的最低版本，也就是选择的版本之上都可以支持（高版本具有更多新特性，在支持更多的机型和使用更新的特性上需要一些数据来权衡），更多请查看<a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_blank" rel="external">API LEVEL</a>，当然如果支持的版本过低，又想使用新特性，可以用代码控制<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</span><br><span class="line">        ActionBar actionBar = getActionBar();</span><br><span class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>详见    <a href="http://developer.android.com/training/basics/supporting-devices/platforms.html" target="_blank" rel="external">Supporting Different Platform Versions</a><br>界面上显示了Google Play上的数据是4.0以上版本的机器占90%，刚才查了一下友盟的数据，基本上选择4.0以上版本就可以了，2.3的时代终于过去了！</p>
+<p><img src="/img/android-training-setup-03.png" alt="Android Training Setup 03"><br>点击next</p>
+<h4 id="4-添加一个Activity">4.添加一个Activity</h4><p><img src="/img/android-training-setup-04.png" alt="Android Training Setup 04"><br>选择 Blank Activity 点击next<br>设置相关资源文件名，如图<br><img src="/img/android-training-setup-05.png" alt="Android Training Setup 05"><br>然后点击Finish，项目就建好了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidy46wwq002no24jh3bsnbsh" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidyvjx00002n1c4jceue63fo" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/30/android/training/getting-started/#ds-thread" class="article-comment-link">评论</a>
       
@@ -207,19 +229,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2015/08/30/wiki/cmd-markdown/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          ［转载］Cmd Markdown 语法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/03/10/sketch/first/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/08/29/wiki/cmd-markdown/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">第一篇啊</div>
+      <div class="article-nav-title">［转载］Cmd Markdown 语法</div>
     </a>
   
 </nav>
@@ -248,7 +261,24 @@ ga('send', 'pageview');
           <li>
             
             <div class="item-thumbnail">
-              <a href="/2015/08/30/wiki/cmd-markdown/" class="thumbnail">
+              <a href="/2015/08/30/android/training/getting-started/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Getting Started" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training/">Android/Training</a></p>
+              <p class="item-title"><a href="/2015/08/30/android/training/getting-started/" class="title">Getting Started</a></p>
+              <p class="item-date"><time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/29/wiki/cmd-markdown/" class="thumbnail">
   
     <span style="background-image:url(https://www.zybuluo.com/static/img/logo.png
 )" alt="［转载］Cmd Markdown 语法" class="thumbnail-image"></span>
@@ -258,26 +288,8 @@ ga('send', 'pageview');
             
             <div class="item-inner">
               <p class="item-category"><a class="article-category-link" href="/categories/wiki/">wiki</a></p>
-              <p class="item-title"><a href="/2015/08/30/wiki/cmd-markdown/" class="title">［转载］Cmd Markdown 语法</a></p>
-              <p class="item-date"><time datetime="2015-08-30T05:49:07.000Z" itemprop="datePublished">2015-08-30</time></p>
-            </div>
-          </li>
-        
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/08/30/android/training/getting-started/" class="thumbnail">
-  
-    <span style="background-image:url(/../../img/android-training-setup-01.png
-)" alt="Getting Started" class="thumbnail-image"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training/">Android/Training</a></p>
-              <p class="item-title"><a href="/2015/08/30/android/training/getting-started/" class="title">Getting Started</a></p>
-              <p class="item-date"><time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time></p>
+              <p class="item-title"><a href="/2015/08/29/wiki/cmd-markdown/" class="title">［转载］Cmd Markdown 语法</a></p>
+              <p class="item-date"><time datetime="2015-08-29T05:49:07.000Z" itemprop="datePublished">2015-08-29</time></p>
             </div>
           </li>
         
