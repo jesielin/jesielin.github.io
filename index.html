@@ -185,18 +185,65 @@ ga('send', 'pageview');
 <h4 id="2-填写相关项">2.填写相关项</h4><ul>
 <li>Application Name：项目名字，这里选用AndroidTrainingDemo</li>
 <li>Company Domain：公司域，AS会记忆这个字段</li>
-<li>Package Name：项目的包名，这个字段是根据以上两项组合而成，遵循Java机制<br><em><code>Your package name must be unique across all packages installed on the Android system.</code></em><br>生成的包名在用户机器上必须是唯一的，这也是保证将来APP上传到市场上时，唯一迭代的其中一个依据。</li>
+<li>Package Name：项目的包名，这个字段是根据以上两项组合而成，遵循Java机制<blockquote>
+<p>Your package name must be unique across all packages installed on the Android system.<br>生成的包名在用户机器上必须是唯一的，这也是保证将来APP上传到市场上时，唯一迭代的其中一个依据。</p>
+</blockquote>
+</li>
 <li>Project Location：项目保存路径，看心情好了。<br>然后点击Next<br><img src="/img/android-training-lesson1-02.png" alt="Android Training Lesson1 02"></li>
 </ul>
 <h4 id="3-选择版本">3.选择版本</h4><p>这里有4个选项，Phone and Tablet，TV，Wear，Glass<br>我们选择第一个，也就是适配手机或者平板<br>这里选择的是支持的最低版本，也就是选择的版本之上都可以支持（高版本具有更多新特性，在支持更多的机型和使用更新的特性上需要一些数据来权衡），更多请查看<a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_blank" rel="external">API LEVEL</a>，当然如果支持的版本过低，又想使用新特性，可以用代码控制<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</span><br><span class="line">        ActionBar actionBar = getActionBar();</span><br><span class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>详见    <a href="http://developer.android.com/training/basics/supporting-devices/platforms.html" target="_blank" rel="external">Supporting Different Platform Versions</a><br>界面上显示了Google Play上的数据是4.0以上版本的机器占90%，刚才查了一下友盟的数据，基本上选择4.0以上版本就可以了，2.3的时代终于过去了！</p>
 <p><img src="/img/android-training-lesson1-03.png" alt="Android Training Lesson1 03"><br>点击next</p>
 <h4 id="4-添加一个Activity">4.添加一个Activity</h4><p><img src="/img/android-training-lesson1-04.png" alt="Android Training Lesson1 04"><br>选择 Blank Activity 点击next<br>设置相关资源文件名，如图<br><img src="/img/android-training-lesson1-05.png" alt="Android Training Lesson1 05"><br>然后点击Finish，项目就建好了。</p>
+<h4 id="5-目录结构">5.目录结构</h4><p><img src="/img/android-training-lesson1-06.png" alt="Android Training Lesson1 06"></p>
+<p><em><code>app/src/main/java/com.mycompany.myfirstapp/MyActivity.java</code></em></p>
+<ul>
+<li>我们创建的第一个Activity</li>
+</ul>
+<p><em><code>app/src/main/res/layout/activity_my.xml</code></em></p>
+<ul>
+<li>Activity对应的布局文件，也就是手机上的页面布局</li>
+</ul>
+<p><em><code>app/src/main/AndroidManifest.xml</code></em></p>
+<ul>
+<li>可以暂时简单理解为项目的配置文件</li>
+</ul>
+<p><em><code>app/build.gradle</code></em></p>
+<ul>
+<li>AS是用<a href="https://gradle.org/" target="_blank" rel="external">Gradle</a>打包编译的。每个<a href="https://developer.android.com/sdk/installing/create-project.html#CreatingAModule" target="_blank" rel="external">module</a>都有一个build.gradle文件，另外，整个项目也有一个build.gradle文件，我们最关心的还是module的build.gradle文件，因为里面放着相关依赖配置以及其他默认配置，module常见的分为两类，一个app module，一个library module，顾名思义，一个app的模块，一个库模块，在build.gradle顶部，通过<code>apply plugin: &#39;com.android.application&#39;</code>和<code>apply plugin: &#39;com.android.library&#39;</code>区分，这个项目只有一个app模块。</li>
+</ul>
+<p><img src="/img/android-training-lesson1-07.png" alt="Android Training Lesson1 07"><br>– <em><code>compiledSdkVersion</code></em><br>编译版本，默认使用最新的API LEVEL，以便你能使用更多新特性，更多的API版本可使用<a href="http://developer.android.com/sdk/installing/adding-packages.html" target="_blank" rel="external">SDK Manager</a>来下载和管理，SDK Manager可以在工具栏中找到<br><img src="/img/android-training-lesson1-08.png" alt="Android Training Lesson1 08"><br>– <em><code>applicationId</code></em><br>项目包名，也就是上面提到的唯一标示你APP的东西<br>– <em><code>minSdkVersion</code></em><br>在之前设置过的，项目支持的最低版本<br>– <em><code>targetSdkVersion</code></em><br>官方给出的说明是通过这个字段来测试是否兼容新版本，需要跟最新API LEVEL同步，暂时可以简单理解为你能使用的新特性的上限版本<br><em>顺便提一下，以前的android开发是修改manifest来更改配置的，自从引入gradle之后，一部分配置被迁移到了build.gradle，所以manifest的部分配置是gradle根据配置来生成</em></p>
+<blockquote>
+<p>有些以下是资源文件，在<code>/res</code>目录下</p>
+</blockquote>
+<p><em><code>drawable&lt;density&gt;/</code></em><br>存放图片资源文件的目录，比如bitmap，还可以根据不同的<code>像素密度</code><a href="http://developer.android.com/guide/practices/screens_support.html" target="_blank" rel="external">dpi</a>分目录管理，这个以后再提，官方文档可能还没有更新</p>
+<blockquote>
+<p>Here you’ll find the ic_launcher.png that appears when you run the default app.</p>
+</blockquote>
+<p>其实现在ic_launcher，也就是app桌面图标最好是放在mimmap目录下，貌似可以更好的渲染图标<br><em><code>layout/</code></em><br>存放项目的布局文件，也就是用户交互界面<br><em><code>menu/</code></em><br>存放每个页面的菜单布局，android的menu感觉一直很蛋疼，从当初的实体menu键，上拉menu，到actionbar，到toolbar，变化很快，很多项目也是自己来定义页面顶部titlebar的，所以这个目录经常被无视掉<br><em><code>values/</code></em><br>存放项目的一些其他资源值，比如字符串(用于多语言)，色值，样式之类的，这样对项目的迭代维护起到了至关重要的作用。</p>
+<blockquote>
+<p>我们知道移动端项目不只是纯代码，还有纷繁复杂的资源文件，google很聪明的用上面这种目录结构来把相关的资源抽象到单独的目录，方便了编译系统(android项目的编译流程会在其他章节介绍)，也大大提高了开发效率。</p>
+</blockquote>
+<h3 id="Command_Line_Tools_创建项目">Command Line Tools 创建项目</h3><hr>
+<h4 id="1-首先进入sdk/tools目录下">1.首先进入sdk/tools目录下</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/Library/Android/sdk/tools</span><br></pre></td></tr></table></figure>
+<h4 id="2-然后列出android版本">2.然后列出android版本</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./android list</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h2 id="Available_Android_targets:">Available Android targets:</h2><p>id: 1 or “android-15”<br>     Name: Android 4.0.3<br>     Type: Platform<br>     API level: 15<br>     Revision: 5<br>     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800</p>
+<h2 id="Tag/ABIs_:_default/armeabi-v7a,_default/mips,_default/x86">Tag/ABIs : default/armeabi-v7a, default/mips, default/x86</h2><p>id: 2 or “android-16”<br>     Name: Android 4.1.2<br>     Type: Platform<br>     API level: 16<br>     Revision: 5<br>     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in</p>
+<h2 id="Tag/ABIs_:_no_ABIs-"> Tag/ABIs : no ABIs.</h2><p>id: 3 or “android-17”<br>     Name: Android 4.2.2<br>     Type: Platform<br>     API level: 17<br>     Revision: 3<br>     Skins: HVGA, QVGA, WQVGA400, WQVGA432, WSVGA, WVGA800 (default), WVGA854, WXGA720, WXGA800, WXGA800-7in<br> Tag/ABIs : no ABIs.<br>……</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ android create project --target &lt;target-id&gt; --name MyFirstApp \</span><br><span class="line">--path &lt;path-to-workspace&gt;/MyFirstApp --activity MyActivity \</span><br><span class="line">--package com.example.myfirstapp</span><br></pre></td></tr></table></figure>
+<p>替换target-id为上一步列表中的某个id，官方依然推荐最新版本，替换path-to-workspace为你的文件路径<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ ./android create project --target <span class="number">8</span> --name MyFirstApp --path ~/Documents/Code/android/MyFirstApp --activity MyActivity --package com.example.myfirstapp</span><br><span class="line">Created project directory: /Users/shawn/Documents/Code/android/MyFirstApp</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/src/com/example/myfirstapp</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/src/com/example/myfirstapp/MyActivity.java</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/bin</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/libs</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/values</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/res/values/strings.xml</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/layout</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/res/layout/main.xml</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/drawable-xhdpi</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/drawable-hdpi</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/drawable-mdpi</span><br><span class="line">Created directory /Users/shawn/Documents/Code/android/MyFirstApp/res/drawable-ldpi</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/AndroidManifest.xml</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/build.xml</span><br><span class="line">Added file /Users/shawn/Documents/Code/android/MyFirstApp/proguard-project.txt</span><br></pre></td></tr></table></figure></p>
+<p><em>我试过了，这个command line有点坑爹，建好的项目只是过去的目录结构，并不是gradle的结构，也没有添加gradle打包相关配置，或许用eclipse可以打开运行，但是不推荐</em></p>
+<blockquote>
+<p>Tip: Add the platform-tools/ as well as the tools/ directory to your PATH environment variable.<br>把这些命令添加到系统环境变量里会更方便哦~</p>
+</blockquote>
+<p><strong><em>经验尚欠，希望各位看官多加指正，或通过邮件<a href="mailto:happyshawn88@gmail.com" target="_blank" rel="external">联系我</a></em></strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidywqozf002n9y4jiqrhug3o" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidzpb0xb002npy4jazqmro60" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/30/android/training/getting-started/#ds-thread" class="article-comment-link">评论</a>
       
@@ -334,7 +381,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cidywqoyc000e9y4jxs14i394" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cidzpb0wd000epy4jcwlphlpo" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/#ds-thread" class="article-comment-link">评论</a>
       
@@ -391,7 +438,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cidywqoza00289y4jrr3zschn" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cidzpb0x60028py4jtytnu8fj" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/03/10/sketch/first/#ds-thread" class="article-comment-link">评论</a>
       
@@ -453,7 +500,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cidywqoz700219y4j8dd03iw1" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cidzpb0x30021py4javvm6am8" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
       
@@ -511,7 +558,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cidywqoz2001q9y4jmzsmfidi" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cidzpb0wz001qpy4j2t3ljqbe" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2014/05/20/sketch/new-start/#ds-thread" class="article-comment-link">评论</a>
       
@@ -568,7 +615,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/" data-id="cidywqoye000j9y4juuboym3a" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/" data-id="cidzpb0wf000jpy4jdh9n1392" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/#ds-thread" class="article-comment-link">评论</a>
       
