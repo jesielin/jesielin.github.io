@@ -4,7 +4,7 @@
   <subtitle><![CDATA[no reality]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jesielin.github.io/"/>
-  <updated>2015-08-31T16:23:52.000Z</updated>
+  <updated>2015-08-31T16:38:45.000Z</updated>
   <id>http://jesielin.github.io/</id>
   
   <author>
@@ -15,15 +15,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[run-your-app]]></title>
-    <link href="http://jesielin.github.io/2015/09/01/android/training/run-your-app/"/>
-    <id>http://jesielin.github.io/2015/09/01/android/training/run-your-app/</id>
+    <title><![CDATA[Running Your App]]></title>
+    <link href="http://jesielin.github.io/2015/09/01/android/training/running-your-app/"/>
+    <id>http://jesielin.github.io/2015/09/01/android/training/running-your-app/</id>
     <published>2015-08-31T16:23:52.000Z</published>
-    <updated>2015-08-31T16:23:52.000Z</updated>
+    <updated>2015-08-31T16:38:45.000Z</updated>
     <content type="html"></content>
     <summary type="html">
     
     </summary>
+    
+      <category term="Android Training" scheme="http://jesielin.github.io/tags/Android-Training/"/>
+    
+      <category term="开发" scheme="http://jesielin.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Android Training/Get Started" scheme="http://jesielin.github.io/categories/Android-Training-Get-Started/"/>
     
   </entry>
   
@@ -32,9 +38,8 @@
     <link href="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/"/>
     <id>http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/</id>
     <published>2015-08-29T17:43:00.000Z</published>
-    <updated>2015-08-31T16:35:06.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="Creating_an_Android_Project">Creating an Android Project</h2><hr>
-<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">Android Studio</a></strong>，以后简称<code>AS</code>，那些还在用ADT不知道什么心态，google早就不支持了。</p>
+    <updated>2015-08-31T16:38:43.000Z</updated>
+    <content type="html"><![CDATA[<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="external">Android Studio</a></strong>，以后简称<code>AS</code>，那些还在用ADT不知道什么心态，google早就不支持了。</p>
 <h3 id="Android_Studio_创建项目">Android Studio 创建项目</h3><hr>
 <h4 id="1-创建新项目">1.创建新项目</h4><ul>
 <li>如果在欢迎界面，点击New Project</li>
@@ -99,11 +104,10 @@
 <p><strong><em>经验尚欠，希望各位看官多加指正，或通过邮件<a href="mailto:happyshawn88@gmail.com" target="_blank" rel="external">联系我</a></em></strong></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Creating_an_Android_Project">Creating an Android Project</h2><hr>
-<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href=]]>
+    <![CDATA[<p> 顾名思义，这一章教你如何创建一个 <em>Android项目</em>，当然前提是你最好使用<strong><a href="http://developer.android.com/sdk/index.html" target="_blank" rel="externa]]>
     </summary>
     
-      <category term="Android" scheme="http://jesielin.github.io/tags/Android/"/>
+      <category term="Android Training" scheme="http://jesielin.github.io/tags/Android-Training/"/>
     
       <category term="开发" scheme="http://jesielin.github.io/tags/%E5%BC%80%E5%8F%91/"/>
     
