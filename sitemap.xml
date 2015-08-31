@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://jesielin.github.io/2015/08/30/android/training/getting-started/</loc>
-    <lastmod>2015-08-31T09:04:47.000Z</lastmod>
+    <loc>http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/</loc>
+    <lastmod>2015-08-31T16:35:06.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jesielin.github.io/2015/09/01/android/training/run-your-app/</loc>
+    <lastmod>2015-08-31T16:23:52.000Z</lastmod>
   </url>
   
   <url>
@@ -32,12 +37,12 @@
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/2011/04/29/sketch/see-you-next-life-grandpa/</loc>
+    <loc>http://jesielin.github.io/2012/06/14/sketch/see-you-hangzhou/</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/2012/06/14/sketch/see-you-hangzhou/</loc>
+    <loc>http://jesielin.github.io/about/index.html</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   
@@ -47,12 +52,7 @@
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/2010/04/15/sketch/meng-li-hua-luo-zhi-duo-shao/</loc>
-    <lastmod>2015-08-28T03:08:30.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jesielin.github.io/2011/01/09/sketch/thanks/</loc>
+    <loc>http://jesielin.github.io/2010/03/19/sketch/wind-season/</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   
@@ -67,12 +67,12 @@
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/2010/03/19/sketch/wind-season/</loc>
+    <loc>http://jesielin.github.io/2011/07/06/sketch/who-moved-my-strings/</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/2011/07/06/sketch/who-moved-my-strings/</loc>
+    <loc>http://jesielin.github.io/2011/01/09/sketch/thanks/</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   
@@ -82,7 +82,12 @@
   </url>
   
   <url>
-    <loc>http://jesielin.github.io/about/index.html</loc>
+    <loc>http://jesielin.github.io/2011/04/29/sketch/see-you-next-life-grandpa/</loc>
+    <lastmod>2015-08-28T03:08:30.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jesielin.github.io/2010/04/15/sketch/meng-li-hua-luo-zhi-duo-shao/</loc>
     <lastmod>2015-08-28T03:08:30.000Z</lastmod>
   </url>
   

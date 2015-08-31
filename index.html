@@ -105,7 +105,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        14
+        15
         <span>文章</span>
       </div>
       <div class="article-info-block">
@@ -132,12 +132,59 @@ ga('send', 'pageview');
 
       
       <section id="main">
-      <article id="post-android/training/getting-started" class="article article-type-post" itemscope itemprop="blogPost">
+      <article id="post-android/training/run-your-app" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/android/training/run-your-app/">run-your-app</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/01/android/training/run-your-app/">
+      <time datetime="2015-08-31T16:23:52.000Z" itemprop="datePublished">2015-09-01</time>
+    </a>
+  </div>
+
+
+          
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/run-your-app/" data-id="cie05duqo002n314jtlckv7nw" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/09/01/android/training/run-your-app/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
+      <article id="post-android/training/creating-an-android-project" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       
 	
-		<a href="/2015/08/30/android/training/getting-started/" itemprop="url"><img src="/img/android-training-lesson1-banner.png" class="article-banner"></a>
+		<a href="/2015/08/30/android/training/creating-an-android-project/" itemprop="url"><img src="/img/building-your-first-app-banner.png" class="article-banner"></a>
 	
 
 
@@ -149,7 +196,7 @@ ga('send', 'pageview');
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/30/android/training/getting-started/">Getting Started</a>
+      <a class="article-title" href="/2015/08/30/android/training/creating-an-android-project/">Creating an Android Project</a>
     </h1>
   
 
@@ -157,7 +204,7 @@ ga('send', 'pageview');
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/08/30/android/training/getting-started/">
+    <a href="/2015/08/30/android/training/creating-an-android-project/">
       <time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time>
     </a>
   </div>
@@ -166,7 +213,7 @@ ga('send', 'pageview');
           
   <div class="article-category">
   	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Android-Training/">Android/Training</a>
+    <a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a>
   </div>
 
         </div>
@@ -180,7 +227,7 @@ ga('send', 'pageview');
 <h3 id="Android_Studio_创建项目">Android Studio 创建项目</h3><hr>
 <h4 id="1-创建新项目">1.创建新项目</h4><ul>
 <li>如果在欢迎界面，点击New Project</li>
-<li>如果在项目界面，点击File -&gt; New -&gt; New Project<br>都会弹出以下界面<br><img src="/img/android-training-lesson1-01.png" alt="Android Training Lesson1 01"></li>
+<li>如果在项目界面，点击File -&gt; New -&gt; New Project<br>都会弹出以下界面<br><img src="/img/creating-an-android-project-01.png" alt="Creating an Android Project 01"></li>
 </ul>
 <h4 id="2-填写相关项">2.填写相关项</h4><ul>
 <li>Application Name：项目名字，这里选用AndroidTrainingDemo</li>
@@ -189,13 +236,13 @@ ga('send', 'pageview');
 <p>Your package name must be unique across all packages installed on the Android system.<br>生成的包名在用户机器上必须是唯一的，这也是保证将来APP上传到市场上时，唯一迭代的其中一个依据。</p>
 </blockquote>
 </li>
-<li>Project Location：项目保存路径，看心情好了。<br>然后点击Next<br><img src="/img/android-training-lesson1-02.png" alt="Android Training Lesson1 02"></li>
+<li>Project Location：项目保存路径，看心情好了。<br>然后点击Next<br><img src="/img/creating-an-android-project-02.png" alt="Creating an Android Project 02"></li>
 </ul>
 <h4 id="3-选择版本">3.选择版本</h4><p>这里有4个选项，Phone and Tablet，TV，Wear，Glass<br>我们选择第一个，也就是适配手机或者平板<br>这里选择的是支持的最低版本，也就是选择的版本之上都可以支持（高版本具有更多新特性，在支持更多的机型和使用更新的特性上需要一些数据来权衡），更多请查看<a href="http://developer.android.com/guide/topics/manifest/uses-sdk-element.html#ApiLevels" target="_blank" rel="external">API LEVEL</a>，当然如果支持的版本过低，又想使用新特性，可以用代码控制<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">setUpActionBar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Make sure we're running on Honeycomb or higher to use ActionBar APIs</span></span><br><span class="line">    <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.HONEYCOMB) &#123;</span><br><span class="line">        ActionBar actionBar = getActionBar();</span><br><span class="line">        actionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>详见    <a href="http://developer.android.com/training/basics/supporting-devices/platforms.html" target="_blank" rel="external">Supporting Different Platform Versions</a><br>界面上显示了Google Play上的数据是4.0以上版本的机器占90%，刚才查了一下友盟的数据，基本上选择4.0以上版本就可以了，2.3的时代终于过去了！</p>
-<p><img src="/img/android-training-lesson1-03.png" alt="Android Training Lesson1 03"><br>点击next</p>
-<h4 id="4-添加一个Activity">4.添加一个Activity</h4><p><img src="/img/android-training-lesson1-04.png" alt="Android Training Lesson1 04"><br>选择 Blank Activity 点击next<br>设置相关资源文件名，如图<br><img src="/img/android-training-lesson1-05.png" alt="Android Training Lesson1 05"><br>然后点击Finish，项目就建好了。</p>
-<h4 id="5-目录结构">5.目录结构</h4><p><img src="/img/android-training-lesson1-06.png" alt="Android Training Lesson1 06"></p>
+<p><img src="/img/creating-an-android-project-03.png" alt="Creating an Android Project 03"><br>点击next</p>
+<h4 id="4-添加一个Activity">4.添加一个Activity</h4><p><img src="/img/creating-an-android-project-04.png" alt="Creating an Android Project 04"><br>选择 Blank Activity 点击next<br>设置相关资源文件名，如图<br><img src="/img/creating-an-android-project-05.png" alt="Creating an Android Project 05"><br>然后点击Finish，项目就建好了。</p>
+<h4 id="5-目录结构">5.目录结构</h4><p><img src="/img/creating-an-android-project-06.png" alt="Creating an Android Project 06"></p>
 <p><em><code>app/src/main/java/com.mycompany.myfirstapp/MyActivity.java</code></em></p>
 <ul>
 <li>我们创建的第一个Activity</li>
@@ -212,7 +259,7 @@ ga('send', 'pageview');
 <ul>
 <li>AS是用<a href="https://gradle.org/" target="_blank" rel="external">Gradle</a>打包编译的。每个<a href="https://developer.android.com/sdk/installing/create-project.html#CreatingAModule" target="_blank" rel="external">module</a>都有一个build.gradle文件，另外，整个项目也有一个build.gradle文件，我们最关心的还是module的build.gradle文件，因为里面放着相关依赖配置以及其他默认配置，module常见的分为两类，一个app module，一个library module，顾名思义，一个app的模块，一个库模块，在build.gradle顶部，通过<code>apply plugin: &#39;com.android.application&#39;</code>和<code>apply plugin: &#39;com.android.library&#39;</code>区分，这个项目只有一个app模块。</li>
 </ul>
-<p><img src="/img/android-training-lesson1-07.png" alt="Android Training Lesson1 07"><br>– <em><code>compiledSdkVersion</code></em><br>编译版本，默认使用最新的API LEVEL，以便你能使用更多新特性，更多的API版本可使用<a href="http://developer.android.com/sdk/installing/adding-packages.html" target="_blank" rel="external">SDK Manager</a>来下载和管理，SDK Manager可以在工具栏中找到<br><img src="/img/android-training-lesson1-08.png" alt="Android Training Lesson1 08"><br>– <em><code>applicationId</code></em><br>项目包名，也就是上面提到的唯一标示你APP的东西<br>– <em><code>minSdkVersion</code></em><br>在之前设置过的，项目支持的最低版本<br>– <em><code>targetSdkVersion</code></em><br>官方给出的说明是通过这个字段来测试是否兼容新版本，需要跟最新API LEVEL同步，暂时可以简单理解为你能使用的新特性的上限版本<br><em>顺便提一下，以前的android开发是修改manifest来更改配置的，自从引入gradle之后，一部分配置被迁移到了build.gradle，所以manifest的部分配置是gradle根据配置来生成</em></p>
+<p><img src="/img/creating-an-android-project-07.png" alt="Creating an Android Project 07"><br>– <em><code>compiledSdkVersion</code></em><br>编译版本，默认使用最新的API LEVEL，以便你能使用更多新特性，更多的API版本可使用<a href="http://developer.android.com/sdk/installing/adding-packages.html" target="_blank" rel="external">SDK Manager</a>来下载和管理，SDK Manager可以在工具栏中找到<br><img src="/img/creating-an-android-project-08.png" alt="Creating an Android Project 08"><br>– <em><code>applicationId</code></em><br>项目包名，也就是上面提到的唯一标示你APP的东西<br>– <em><code>minSdkVersion</code></em><br>在之前设置过的，项目支持的最低版本<br>– <em><code>targetSdkVersion</code></em><br>官方给出的说明是通过这个字段来测试是否兼容新版本，需要跟最新API LEVEL同步，暂时可以简单理解为你能使用的新特性的上限版本<br><em>顺便提一下，以前的android开发是修改manifest来更改配置的，自从引入gradle之后，一部分配置被迁移到了build.gradle，所以manifest的部分配置是gradle根据配置来生成</em></p>
 <blockquote>
 <p>有些以下是资源文件，在<code>/res</code>目录下</p>
 </blockquote>
@@ -243,9 +290,9 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/30/android/training/getting-started/" data-id="cidzpb0xb002npy4jazqmro60" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/" data-id="cie05duqr002o314ja1zs41mq" class="article-share-link">分享到</a>
       
-        <a href="http://jesielin.github.io/2015/08/30/android/training/getting-started/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
@@ -381,7 +428,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cidzpb0wd000epy4jcwlphlpo" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cie05dupo000e314jau3t4kzq" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/#ds-thread" class="article-comment-link">评论</a>
       
@@ -438,7 +485,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cidzpb0x60028py4jtytnu8fj" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cie05duqk0028314jb0y7ksn4" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/03/10/sketch/first/#ds-thread" class="article-comment-link">评论</a>
       
@@ -500,7 +547,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cidzpb0x30021py4javvm6am8" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cie05duqh0021314ju0c55hb3" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
       
@@ -558,69 +605,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cidzpb0wz001qpy4j2t3ljqbe" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cie05duqc001q314j17g9m3ov" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2014/05/20/sketch/new-start/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-sketch/young-man-swear" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/11/26/sketch/young-man-swear/">青年记</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2013/11/26/sketch/young-man-swear/">
-      <time datetime="2013-11-26T06:13:46.000Z" itemprop="datePublished">2013-11-26</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <blockquote>
-<p>生于衡水湖畔<br>学于古城之堂<br>幼时精于考试<br>未知缘由<br>因家贫而不敢费<br>幸得之于父母<br>无虑于生活<br>学之外无任何精通<br>少读书<br>愚钝如庙堂之钟<br>深感愧疚<br>曾极度自卑<br>羡百家而不敢求之后快<br>自姥爷去世<br>再无泪水<br>生而单纯<br>被教之男儿须通达理仪<br>玲珑于场合<br>明晓世间无奈<br>不得强求<br>未敢言深<br>不学而得之<br>食色为我性<br>弃之而不能得<br>生性矛盾<br>时而侃侃而谈<br>时而寡言沉默<br>好模仿<br>盼如柴静般看见<br>又如罗永浩善窥于内心<br>抒发己见<br>每思于人生<br>惴惴不敢言<br>望改变世界<br>恐被斥之小丑<br>今驻足路口<br>不知方向<br>茫茫然世间轮回<br>命运作祟<br>望得一知己<br>了解心安<br>若经年之后<br>幸寻得自我<br>日可投身我爱之事业<br>夜可陪伴我爱之家人<br>我谓此生足矣 </p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/" data-id="cidzpb0wf000jpy4jdh9n1392" class="article-share-link">分享到</a>
-      
-        <a href="http://jesielin.github.io/2013/11/26/sketch/young-man-swear/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QQ/">QQ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
     </footer>
   </div>
@@ -646,16 +636,33 @@ ga('send', 'pageview');
           <li>
             
             <div class="item-thumbnail">
-              <a href="/2015/08/30/android/training/getting-started/" class="thumbnail">
+              <a href="/2015/09/01/android/training/run-your-app/" class="thumbnail">
   
-    <span style="background-image:url(/img/android-thumbnail.png)" alt="Getting Started" class="thumbnail-image"></span>
+    <span class="thumbnail-image thumbnail-none"></span>
   
 </a>
             </div>
             
             <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training/">Android/Training</a></p>
-              <p class="item-title"><a href="/2015/08/30/android/training/getting-started/" class="title">Getting Started</a></p>
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/09/01/android/training/run-your-app/" class="title">run-your-app</a></p>
+              <p class="item-date"><time datetime="2015-08-31T16:23:52.000Z" itemprop="datePublished">2015-09-01</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/30/android/training/creating-an-android-project/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Creating an Android Project" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/08/30/android/training/creating-an-android-project/" class="title">Creating an Android Project</a></p>
               <p class="item-date"><time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time></p>
             </div>
           </li>
@@ -712,23 +719,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2014/05/20/sketch/new-start/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2014/05/20/sketch/new-start/" class="title">现在才刚刚开始</a></p>
-              <p class="item-date"><time datetime="2014-05-20T15:46:19.000Z" itemprop="datePublished">2014-05-20</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -738,7 +728,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training/">Android/Training</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
     </div>
   </div>
 
