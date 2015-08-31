@@ -30,7 +30,7 @@
 <meta property="og:image" content="http://jesielin.github.io/img/running-your-app-03.png">
 <meta property="og:image" content="http://jesielin.github.io/img/running-your-app-04.png">
 <meta property="og:image" content="http://jesielin.github.io/img/running-your-app-05.png">
-<meta property="og:updated_time" content="2015-08-31T22:38:28.000Z">
+<meta property="og:updated_time" content="2015-08-31T22:40:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Running Your App">
 <meta name="twitter:description" content="在真机运行
@@ -201,8 +201,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <h3 id="在真机运行">在真机运行</h3><hr>
-<h4 id="设置真机">设置真机</h4><ol>
+        <h2 id="在真机运行">在真机运行</h2><hr>
+<h3 id="设置真机">设置真机</h3><ol>
 <li>准备android usb线（这不废话么。。），如果是windows系统，还需要安装手机驱动，各种厂家的驱动在这里可以找到：<a href="http://developer.android.com/tools/extras/oem-usb.html" target="_blank" rel="external">OEM USB Drivers</a></li>
 <li>打开设备上的USB Debug选项</li>
 </ol>
@@ -213,27 +213,22 @@ ga('send', 'pageview');
 </blockquote>
 </li>
 </ul>
-<h4 id="AS运行APP">AS运行APP</h4><p>点击工具栏的<img src="/img/running-your-app-01.png" alt="">按钮就可以运行了。</p>
+<h3 id="AS运行APP">AS运行APP</h3><p>点击工具栏的<img src="/img/running-your-app-01.png" alt="">按钮就可以运行了。</p>
 <p>有个坑，就是运行之前的配置，有些小同志不注意的话会碰到怎么也跑不起来的问题，首先如图点击Edit Configurations<br><img src="/img/running-your-app-02.png" alt="Running Your App 02"><br>配置如下<br><img src="/img/running-your-app-03.png" alt="Running Your App 03"><br>特别是<strong>Target Device</strong>，我选的是<strong>choose dialog</strong>，可以根据个人喜好选，但是如果运行项目有问题，可以回来检查下这里的配置</p>
-<h4 id="Command_Line运行APP">Command Line运行APP</h4><h5 id="1-_生成APK">1. 生成APK</h5><p>先进入项目根目录下<br>windows用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradlew.bat assembleDebug</span><br></pre></td></tr></table></figure></p>
+<h3 id="Command_Line运行APP">Command Line运行APP</h3><h4 id="1-_生成APK">1. 生成APK</h4><p>先进入项目根目录下<br>windows用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gradlew.bat assembleDebug</span><br></pre></td></tr></table></figure></p>
 <p>mac 或 linux用户<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ chmod +x gradlew</span><br><span class="line">$ ./gradlew assembleDebug</span><br></pre></td></tr></table></figure></p>
 <p>运行结果不截图了，有些人可能第一次执行会卡在download gradle中，应该是网络问题，2015年之后我还没碰到过不翻墙就下不了gradle的问题<br>成功后，apk会在<strong>app/build/outputs/apk/</strong>生成</p>
 <blockquote>
 <p>assembleDebug对应生成的是Debug Mode的APK<br>assembleRelease对应生成的是Release Mode的APK</p>
 </blockquote>
-<h5 id="2-_安装APK">2. 安装APK</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb install app/build/outputs/MyFirstApp-debug.apk</span><br></pre></td></tr></table></figure>
+<h4 id="2-_安装APK">2. 安装APK</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb install app/build/outputs/MyFirstApp-debug.apk</span><br></pre></td></tr></table></figure>
 <p>当然要保证<strong>sdk/platform-tools</strong>在你的PATH中</p>
-<h3 id="虚拟机运行APP">虚拟机运行APP</h3><p>首先确保安装了HAXM(Hardware Accelerated Execution Manager),可以在SDK MANAGER中找到，如图<br><img src="/img/running-your-app-04.png" alt="Running Your App 04"></p>
-<ol>
-<li>创建虚拟机<br>可以使用command line打开AVD Manager（Android Virtual Device Manager）<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./android avd</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
+<h2 id="虚拟机运行APP">虚拟机运行APP</h2><hr>
+<p>首先确保安装了HAXM(Hardware Accelerated Execution Manager),可以在SDK MANAGER中找到，如图<br><img src="/img/running-your-app-04.png" alt="Running Your App 04"></p>
+<h3 id="1-_创建虚拟机">1. 创建虚拟机</h3><p>可以使用command line打开AVD Manager（Android Virtual Device Manager）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./android avd</span><br></pre></td></tr></table></figure></p>
 <p>也可以在AS的toolbar中找到<br><img src="/img/running-your-app-05.png" alt="Running Your App 05"></p>
 <p>具体流程在这里不多介绍了，因为官方的AVD确实不好用，现在基本都在用<a href="https://www.genymotion.com/#!/" target="_blank" rel="external">Genymotion</a></p>
-<ol>
-<li>运行APP</li>
-</ol>
-<ul>
+<h3 id="2-_运行APP">2. 运行APP</h3><ul>
 <li><p>command line方式</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ adb install app/build/outputs/MyFirstApp-debug.apk</span><br></pre></td></tr></table></figure>
 </li>
@@ -244,7 +239,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="cie0icpib002nhe4jry2eyx1j" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="cie0if87b002nln4j670036xw" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/09/01/android/training/running-your-app/#ds-thread" class="article-comment-link">评论</a>
       
