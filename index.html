@@ -105,7 +105,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        15
+        16
         <span>文章</span>
       </div>
       <div class="article-info-block">
@@ -132,6 +132,108 @@ ga('send', 'pageview');
 
       
       <section id="main">
+      <article id="post-android/training/building-a-simple-user-interface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      
+	
+		<a href="/2015/09/01/android/training/building-a-simple-user-interface/" itemprop="url"><img src="/img/android-training-building-your-first-app-banner.png" class="article-banner"></a>
+	
+
+
+
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/01/android/training/building-a-simple-user-interface/">Building A Simple User Interface</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/01/android/training/building-a-simple-user-interface/">
+      <time datetime="2015-09-01T05:05:55.000Z" itemprop="datePublished">2015-09-01</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>这一节开发交互界面，交互界面抽象成了XML文件，在<em><code>/res/layout</code></em>目录下。<br>android框架提供了大量UI组件提高开发效率<br><img src="/img/building-a-simple-user-interface-01.png" alt="Building A Simple User Interface 01"><br>但是在Training的章节里不对每个技术细节做详细的介绍，我们首先要做出一个APP来</p>
+<blockquote>
+<p>Declaring your UI layout in XML rather than runtime code is useful for several reasons, but it’s especially important so you can create different layouts for different screen sizes. For example, you can create two versions of a layout and tell the system to use one on “small” screens and the other on “large” screens.<br>这也是之前提到的，为了更好的适配和更方便的管理，把资源文件抽象出来的一种体现</p>
+</blockquote>
+<h2 id="创建LinearLayout(线性布局)">创建LinearLayout(线性布局)</h2><p>LinearLayout是ViewGroup的一个子类，管理的View对象呈线性分布。</p>
+<ol>
+<li>在<em><code>/res/layout</code></em>下找到，并打开，应该是这个样子的，如图<br><img src="/img/building-a-simple-user-interface-02.png" alt="Building A Simple User Interface 02"><br>底部有<strong>Design</strong>和<strong>Text</strong>视图可以切换，一般保持在<strong>Text</strong>视图，把右侧<strong>Preview</strong>选项打开即可。<br>这里现在是自动生成的代码，包括一个root view RelativeLayout和一个TextView，里面不出意外是”Hello World“</li>
+<li>现在我们把这些代码全部删掉，加入以下代码<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"horizontal"</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><em><code>android:orientation=&quot;horizontal&quot;</code></em>：表示LinearLayout控制的布局是横向分布的</li>
+<li><em><code>android:layout_width=&quot;match_parent&quot;</code></em>和<em><code>android:layout_height=&quot;match_parent&quot;</code></em>：该View在<strong>父布局</strong>中的宽和高，这是我们可以控制的根布局，所以选择match_parent来填充整个屏幕</li>
+</ul>
+<h2 id="添加EditText">添加EditText</h2><p>在LinearLayout标签内添加如下代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">EditText</span> <span class="attribute">android:id</span>=<span class="value">"@+id/edit_message"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">    <span class="attribute">android:hint</span>=<span class="value">"@string/edit_message"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>为EditText配置一个id：edit_message</li>
+<li>宽和高为wrap_content，意思是包裹内容，也就是恰好内部文字的宽和高</li>
+<li><code>android:hint</code>是专属EditText控件的属性，表示用户未输入时的提示文字</li>
+<li>在<em><code>res/values/strings.xml</code></em>中添加<strong>edit_message</strong>的string资源<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"app_name"</span>&gt;</span>AndroidTrainingDemo<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"edit_message"</span>&gt;</span>Enter a message<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"button_send"</span>&gt;</span>Send<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"hello_world"</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"action_settings"</span>&gt;</span>Settings<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><em><code>android:id</code></em></p>
+<ul>
+<li>这个View控件的唯一标示。<strong>@</strong>表示引用资源变量，id是一个特殊的资源变量，第一次引用的时候使用<strong>+</strong>，表示创建一个新的id。<br><strong>id</strong>是一种特殊的资源，还有其他普通的资源，比如bitmap，layout文件，string变量等等。<br><strong>id</strong>可以在引用的地方直接声明，而其他资源需要在对应的目录配置，或者生成文件，比如string变量在values/strings中声明，layout的id在生成layout文件时生成，而所有资源变量都会被SDK TOOLS在编译时生成在<strong>gen/R.java</strong>中，可以在<strong>app/build/generated/source/r/debug/com/shawn/androidtrainingdemo/R.java</strong>中，该文件都是根据资源文件自动生成，<strong>切勿手动修改</strong></li>
+<li>EditText的view id与hint的string资源变量名是一样的，但并不影响，因为资源的引用往往是跟随类型的，一种是id类型，一种是string类型，观察R.java同样可以发现这个区别</li>
+</ul>
+<p><img src="/img/building-a-simple-user-interface-03.png" alt="Building A Simple User Interface 03"></p>
+<h2 id="添加Button">添加Button</h2><p>代码如下<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"horizontal"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">EditText</span> <span class="attribute">android:id</span>=<span class="value">"@+id/edit_message"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:hint</span>=<span class="value">"@string/edit_message"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"@string/button_send"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其他与添加EditText一样，<code>android:text</code>是继承自<code>TextView</code>的属性，表示控件的label。</p>
+<h2 id="调整布局">调整布局</h2><p>这个时候我们发现preview显示，Button右侧还有部分空白，两个控件并没有横向填满屏幕。可以通过<code>android:layout_weight</code>来控制。<br><em><code>android:layout_weight</code></em></p>
+<ul>
+<li>表示LinearLayout中子View的权重。顾名思义，表示子View在父布局中占几份，如果只有一个View加上了这个属性，效果就是渲染完其他子View之后，将该View填充剩下的部分，如果有一个以上的View使用了该属性，则按份数来划分，比如一个为1，一个为2，则总份数为3，那么其他子View渲染结束后，剩下部分划分为3份，第一个占1份，第二个占2份，另外还可以在LinearLayout中加入<code>android:weightSum</code>来控制总份数，但是一般不太需要刻意配置。<blockquote>
+<p>在设置了<code>android:layout_weight</code>之后，可以将width或者height设置为0dp来提高渲染速度，因为设置权重之后的宽度依赖于其他子View，所以配置宽度并没有意义</p>
+</blockquote>
+</li>
+</ul>
+<p>preview如下<br><img src="/img/building-a-simple-user-interface-04.png" alt="Building A Simple User Interface 04"></p>
+<p>最后运行APP</p>
+<p><strong><em>经验尚欠，希望各位看官多加指正，或通过邮件<a href="mailto:happyshawn88@gmail.com" target="_blank" rel="external">联系我</a></em></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/" data-id="cie1ov17m002yfp4jef1tar2x" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Training/">Android Training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-android/training/running-your-app" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -213,7 +315,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="cie0if87b002nln4j670036xw" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="cie1ov17g002nfp4jl851znfc" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/09/01/android/training/running-your-app/#ds-thread" class="article-comment-link">评论</a>
       
@@ -338,7 +440,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/" data-id="cie0if87g002uln4j5bcmyo45" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/" data-id="cie1ov17j002ufp4jwsbgx7un" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/#ds-thread" class="article-comment-link">评论</a>
       
@@ -476,7 +578,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cie0if867000eln4je0xpg45a" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cie1ov16h000efp4j0nz03t46" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/#ds-thread" class="article-comment-link">评论</a>
       
@@ -533,7 +635,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cie0if8750028ln4jutfgjgrg" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cie1ov17a0028fp4jha1im4ze" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/03/10/sketch/first/#ds-thread" class="article-comment-link">评论</a>
       
@@ -595,70 +697,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cie0if8720021ln4jagts7hwd" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cie1ov1770021fp4j7ta0qitm" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dota/">dota</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-sketch/new-start" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/05/20/sketch/new-start/">现在才刚刚开始</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2014/05/20/sketch/new-start/">
-      <time datetime="2014-05-20T15:46:19.000Z" itemprop="datePublished">2014-05-20</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <p>现在的现在，我的人生才刚刚开始..</p>
-<p>其实说这句有点对不起我以前的人生，也有点对不起自己，回忆是个朋友，每年都有新的朋友加入，每年都有新朋友变成老朋友，老朋友越来越老，他们并没有逝去，却被我手动忽略掉，这是件很可悲的事，但我相信，懂的人自然懂，我并没有放弃你们。</p>
-<p>2013年和2014年，算是我最艰难的两年，没有目标，或者之前有过目标，被自己，被身边的事推翻了，虽然现在正一步步走着，大部分时间算是踏实的，一反以前的我，但我其实更喜欢以前的我，是那么的无知，却又那么的快乐，我喜欢无知带来的那种愉悦感和执着，而现在，说不上来，感觉快乐维持的时间越来越短了，我总是不遗余力的去做一些完全新鲜的事来换取那一瞬间的满足感，让自己好有些许动力，同时这样带来的副作用也是显而易见的，很多事情貌似都是不连续的，过一段时间又好像变成了小学生，来到一个新的完全未知的世界里，这跟我之前的人生虽然有点相似，周边的世界却截然不同，之前喜欢结交不同的人，现在喜欢做各种不同的事，之前是别人，现在是自己，我生命里的朋友却来越少，而对自己的依赖却越来越多，这跟我最爱看的海贼里面是截然相反的，路飞没有朋友是活不下去的，虽然我也相信这点，但自己独处的需求却越来越多，我没办法改变，每个时期的我都是我，也不是我，我跟着我走到这，又走到那，我拍拍我的肩膀问，你能告诉我今后会变好么？我说，活着，是你唯一的选择。</p>
-<p>我将在这里与我相会，我将在这里注视自己，我对自己说，下一个春天，不管你走到哪里，回到这里来，一切都没变过，好像十年前那个初夏的课堂里…</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/05/20/sketch/new-start/" data-id="cie0if86y001qln4jo7r5976t" class="article-share-link">分享到</a>
-      
-        <a href="http://jesielin.github.io/2014/05/20/sketch/new-start/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
     </footer>
   </div>
@@ -680,6 +724,23 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/01/android/training/building-a-simple-user-interface/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Building A Simple User Interface" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/09/01/android/training/building-a-simple-user-interface/" class="title">Building A Simple User Interface</a></p>
+              <p class="item-date"><time datetime="2015-09-01T05:05:55.000Z" itemprop="datePublished">2015-09-01</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -750,23 +811,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2014/06/08/sketch/is-dota-kidding/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2014/06/08/sketch/is-dota-kidding/" class="title">在这个年纪，打DOTA冲分有那么可笑么？</a></p>
-              <p class="item-date"><time datetime="2014-06-08T03:50:07.000Z" itemprop="datePublished">2014-06-08</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -776,7 +820,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
     </div>
   </div>
 

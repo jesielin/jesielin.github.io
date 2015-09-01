@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Building A Simple User Interface | 2015</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这一节开发交互界面，交互界面抽象成了XML文件，在/res/layout目录下。android框架提供了大量UI组件提高开发效率但是在Training的章节里不对每个技术细节做详细的介绍，我们首先要做出一个APP来
+
+Declaring your UI layout in XML rather than runtime code is useful for several reasons, but">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building A Simple User Interface">
+<meta property="og:url" content="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/index.html">
+<meta property="og:site_name" content="2015">
+<meta property="og:description" content="这一节开发交互界面，交互界面抽象成了XML文件，在/res/layout目录下。android框架提供了大量UI组件提高开发效率但是在Training的章节里不对每个技术细节做详细的介绍，我们首先要做出一个APP来
+
+Declaring your UI layout in XML rather than runtime code is useful for several reasons, but">
+<meta property="og:image" content="http://jesielin.github.io/img/building-a-simple-user-interface-01.png">
+<meta property="og:image" content="http://jesielin.github.io/img/building-a-simple-user-interface-02.png">
+<meta property="og:image" content="http://jesielin.github.io/img/building-a-simple-user-interface-03.png">
+<meta property="og:image" content="http://jesielin.github.io/img/building-a-simple-user-interface-04.png">
+<meta property="og:updated_time" content="2015-09-01T18:24:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Building A Simple User Interface">
+<meta name="twitter:description" content="这一节开发交互界面，交互界面抽象成了XML文件，在/res/layout目录下。android框架提供了大量UI组件提高开发效率但是在Training的章节里不对每个技术细节做详细的介绍，我们首先要做出一个APP来
+
+Declaring your UI layout in XML rather than runtime code is useful for several reasons, but">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  <link href='//fonts.useso.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-66810229-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+</head>
+<body>
+  <div id="container">
+    <header id="header">
+  <div id="header-main" class="header-inner">
+    <div class="outer">
+      <a href="/" id="logo"><i class="logo" style="background-image: url(/css/images/logo.png)"></i><span class="site-title">2015</span></a>
+      <nav id="main-nav">
+        
+          <a class="main-nav-link" href="/.">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      
+        <nav id="sub-nav">
+          <div class="profile" id="profile-nav">
+            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/css/images/avatar.png"><i class="fa fa-caret-down"></i></a>
+          </div>
+        </nav>
+      
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"> </button><input type="hidden" name="sitesearch" value="http://jesielin.github.io"></form>
+      </div>
+    </div>
+  </div>
+  <div id="main-nav-mobile" class="header-sub header-inner">
+    <table class="menu outer">
+      <tr>
+        
+          <td><a class="main-nav-link" href="/.">Home</a></td>
+        
+          <td><a class="main-nav-link" href="/archives">Archives</a></td>
+        
+          <td><a class="main-nav-link" href="/categories">Categories</a></td>
+        
+          <td><a class="main-nav-link" href="/tags">Tags</a></td>
+        
+          <td><a class="main-nav-link" href="/about">About</a></td>
+        
+        <td>
+          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="hidden" name="sitesearch" value="http://jesielin.github.io"></form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</header>
+
+    <div class="outer">
+      
+        <aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/css/images/avatar.png">
+      <h2 id="name">shawn</h2>
+      <h3 id="title">Android Engineer</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+      <a id="follow" href="https://github.com/jesielin/">关注我</a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        16
+        <span>文章</span>
+      </div>
+      <div class="article-info-block">
+        11
+        <span>标签</span>
+      </div>
+    </div>
+    
+    <div class="contact-info profile-block">
+      <table class="contact-list">
+        <tr>
+          
+          <td><a href="http://github.com/jesielin" target="_blank" title="github"><i class="fa fa-github"></i></a></td>
+          
+          <td><a href="/atom.xml" target="_blank" title="rss"><i class="fa fa-rss"></i></a></td>
+          
+        </tr>
+      </table>
+    </div>
+    
+    
+  </div>
+</aside>
+
+      
+      <section id="main"><article id="post-android/training/building-a-simple-user-interface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      
+	
+		<img src="/img/android-training-building-your-first-app-banner.png" class="article-banner">
+	
+
+
+
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Building A Simple User Interface
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/01/android/training/building-a-simple-user-interface/">
+      <time datetime="2015-09-01T05:05:55.000Z" itemprop="datePublished">2015-09-01</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>这一节开发交互界面，交互界面抽象成了XML文件，在<em><code>/res/layout</code></em>目录下。<br>android框架提供了大量UI组件提高开发效率<br><img src="/img/building-a-simple-user-interface-01.png" alt="Building A Simple User Interface 01"><br>但是在Training的章节里不对每个技术细节做详细的介绍，我们首先要做出一个APP来</p>
+<blockquote>
+<p>Declaring your UI layout in XML rather than runtime code is useful for several reasons, but it’s especially important so you can create different layouts for different screen sizes. For example, you can create two versions of a layout and tell the system to use one on “small” screens and the other on “large” screens.<br>这也是之前提到的，为了更好的适配和更方便的管理，把资源文件抽象出来的一种体现</p>
+</blockquote>
+<h2 id="创建LinearLayout(线性布局)">创建LinearLayout(线性布局)</h2><p>LinearLayout是ViewGroup的一个子类，管理的View对象呈线性分布。</p>
+<ol>
+<li>在<em><code>/res/layout</code></em>下找到，并打开，应该是这个样子的，如图<br><img src="/img/building-a-simple-user-interface-02.png" alt="Building A Simple User Interface 02"><br>底部有<strong>Design</strong>和<strong>Text</strong>视图可以切换，一般保持在<strong>Text</strong>视图，把右侧<strong>Preview</strong>选项打开即可。<br>这里现在是自动生成的代码，包括一个root view RelativeLayout和一个TextView，里面不出意外是”Hello World“</li>
+<li>现在我们把这些代码全部删掉，加入以下代码<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"horizontal"</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><em><code>android:orientation=&quot;horizontal&quot;</code></em>：表示LinearLayout控制的布局是横向分布的</li>
+<li><em><code>android:layout_width=&quot;match_parent&quot;</code></em>和<em><code>android:layout_height=&quot;match_parent&quot;</code></em>：该View在<strong>父布局</strong>中的宽和高，这是我们可以控制的根布局，所以选择match_parent来填充整个屏幕</li>
+</ul>
+<h2 id="添加EditText">添加EditText</h2><p>在LinearLayout标签内添加如下代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">EditText</span> <span class="attribute">android:id</span>=<span class="value">"@+id/edit_message"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">    <span class="attribute">android:hint</span>=<span class="value">"@string/edit_message"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>为EditText配置一个id：edit_message</li>
+<li>宽和高为wrap_content，意思是包裹内容，也就是恰好内部文字的宽和高</li>
+<li><code>android:hint</code>是专属EditText控件的属性，表示用户未输入时的提示文字</li>
+<li>在<em><code>res/values/strings.xml</code></em>中添加<strong>edit_message</strong>的string资源<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">resources</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"app_name"</span>&gt;</span>AndroidTrainingDemo<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"edit_message"</span>&gt;</span>Enter a message<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"button_send"</span>&gt;</span>Send<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"hello_world"</span>&gt;</span>Hello world!<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">string</span> <span class="attribute">name</span>=<span class="value">"action_settings"</span>&gt;</span>Settings<span class="tag">&lt;/<span class="title">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">resources</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><em><code>android:id</code></em></p>
+<ul>
+<li>这个View控件的唯一标示。<strong>@</strong>表示引用资源变量，id是一个特殊的资源变量，第一次引用的时候使用<strong>+</strong>，表示创建一个新的id。<br><strong>id</strong>是一种特殊的资源，还有其他普通的资源，比如bitmap，layout文件，string变量等等。<br><strong>id</strong>可以在引用的地方直接声明，而其他资源需要在对应的目录配置，或者生成文件，比如string变量在values/strings中声明，layout的id在生成layout文件时生成，而所有资源变量都会被SDK TOOLS在编译时生成在<strong>gen/R.java</strong>中，可以在<strong>app/build/generated/source/r/debug/com/shawn/androidtrainingdemo/R.java</strong>中，该文件都是根据资源文件自动生成，<strong>切勿手动修改</strong></li>
+<li>EditText的view id与hint的string资源变量名是一样的，但并不影响，因为资源的引用往往是跟随类型的，一种是id类型，一种是string类型，观察R.java同样可以发现这个区别</li>
+</ul>
+<p><img src="/img/building-a-simple-user-interface-03.png" alt="Building A Simple User Interface 03"></p>
+<h2 id="添加Button">添加Button</h2><p>代码如下<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">LinearLayout</span> <span class="attribute">xmlns:android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span><br><span class="line">    <span class="attribute">xmlns:tools</span>=<span class="value">"http://schemas.android.com/tools"</span></span><br><span class="line">    <span class="attribute">android:layout_width</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:layout_height</span>=<span class="value">"match_parent"</span></span><br><span class="line">    <span class="attribute">android:orientation</span>=<span class="value">"horizontal"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">EditText</span> <span class="attribute">android:id</span>=<span class="value">"@+id/edit_message"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:hint</span>=<span class="value">"@string/edit_message"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"@string/button_send"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其他与添加EditText一样，<code>android:text</code>是继承自<code>TextView</code>的属性，表示控件的label。</p>
+<h2 id="调整布局">调整布局</h2><p>这个时候我们发现preview显示，Button右侧还有部分空白，两个控件并没有横向填满屏幕。可以通过<code>android:layout_weight</code>来控制。<br><em><code>android:layout_weight</code></em></p>
+<ul>
+<li>表示LinearLayout中子View的权重。顾名思义，表示子View在父布局中占几份，如果只有一个View加上了这个属性，效果就是渲染完其他子View之后，将该View填充剩下的部分，如果有一个以上的View使用了该属性，则按份数来划分，比如一个为1，一个为2，则总份数为3，那么其他子View渲染结束后，剩下部分划分为3份，第一个占1份，第二个占2份，另外还可以在LinearLayout中加入<code>android:weightSum</code>来控制总份数，但是一般不太需要刻意配置。<blockquote>
+<p>在设置了<code>android:layout_weight</code>之后，可以将width或者height设置为0dp来提高渲染速度，因为设置权重之后的宽度依赖于其他子View，所以配置宽度并没有意义</p>
+</blockquote>
+</li>
+</ul>
+<p>preview如下<br><img src="/img/building-a-simple-user-interface-04.png" alt="Building A Simple User Interface 04"></p>
+<p>最后运行APP</p>
+<p><strong><em>经验尚欠，希望各位看官多加指正，或通过邮件<a href="mailto:happyshawn88@gmail.com" target="_blank" rel="external">联系我</a></em></strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/" data-id="cie1ov17m002yfp4jef1tar2x" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Training/">Android Training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/09/01/android/training/running-your-app/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Running Your App</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/" data-title="Building A Simple User Interface" data-url="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+      </div>
+  </section>
+
+</section>
+      
+        <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/01/android/training/building-a-simple-user-interface/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Building A Simple User Interface" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/09/01/android/training/building-a-simple-user-interface/" class="title">Building A Simple User Interface</a></p>
+              <p class="item-date"><time datetime="2015-09-01T05:05:55.000Z" itemprop="datePublished">2015-09-01</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/01/android/training/running-your-app/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Running Your App" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/09/01/android/training/running-your-app/" class="title">Running Your App</a></p>
+              <p class="item-date"><time datetime="2015-08-31T16:23:52.000Z" itemprop="datePublished">2015-09-01</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/30/android/training/creating-an-android-project/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Creating an Android Project" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/08/30/android/training/creating-an-android-project/" class="title">Creating an Android Project</a></p>
+              <p class="item-date"><time datetime="2015-08-29T17:43:00.000Z" itemprop="datePublished">2015-08-30</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/08/29/wiki/cmd-markdown/" class="thumbnail">
+  
+    <span style="background-image:url(https://www.zybuluo.com/static/img/logo.png
+)" alt="［转载］Cmd Markdown 语法" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/wiki/">wiki</a></p>
+              <p class="item-title"><a href="/2015/08/29/wiki/cmd-markdown/" class="title">［转载］Cmd Markdown 语法</a></p>
+              <p class="item-date"><time datetime="2015-08-29T05:49:07.000Z" itemprop="datePublished">2015-08-29</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/03/10/sketch/first/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
+              <p class="item-title"><a href="/2015/03/10/sketch/first/" class="title">第一篇啊</a></p>
+              <p class="item-date"><time datetime="2015-03-09T18:58:06.000Z" itemprop="datePublished">2015-03-10</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Android-Training/" style="font-size: 11.67px;">Android Training</a> <a href="/tags/Inside/" style="font-size: 10px;">Inside</a> <a href="/tags/QQ/" style="font-size: 16.67px;">QQ</a> <a href="/tags/day/" style="font-size: 13.33px;">day</a> <a href="/tags/dota/" style="font-size: 10px;">dota</a> <a href="/tags/night/" style="font-size: 15px;">night</a> <a href="/tags/past/" style="font-size: 18.33px;">past</a> <a href="/tags/wiki/" style="font-size: 10px;">wiki</a> <a href="/tags/书摘/" style="font-size: 10px;">书摘</a> <a href="/tags/开发/" style="font-size: 11.67px;">开发</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+    </div>
+  </div>
+
+  
+  <div id="toTop" class="fa fa-chevron-up"></div>
+</aside>
+      
+    </div>
+    <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2000 - 2015 shawn<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+    </div>
+  </div>
+</footer>
+    
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jesielin"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script>
+
+
+<script src="//ajax.useso.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
