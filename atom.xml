@@ -4,7 +4,7 @@
   <subtitle><![CDATA[no reality]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jesielin.github.io/"/>
-  <updated>2015-09-01T18:24:22.000Z</updated>
+  <updated>2015-09-10T07:43:39.000Z</updated>
   <id>http://jesielin.github.io/</id>
   
   <author>
@@ -13,6 +13,82 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Starting Another Activity]]></title>
+    <link href="http://jesielin.github.io/2015/09/10/android/training/starting-another-activity/"/>
+    <id>http://jesielin.github.io/2015/09/10/android/training/starting-another-activity/</id>
+    <published>2015-09-10T03:34:47.000Z</published>
+    <updated>2015-09-10T07:43:39.000Z</updated>
+    <content type="html"><![CDATA[<p>这一课要实现点击Send Button开启新的Activity。</p>
+<h2 id="创建新的Activity">创建新的Activity</h2><hr>
+<ol>
+<li>右键你的activity所在目录，如图选择新建空Activity<br><img src="/img/starting-another-activity-01.png" alt="Starting Another Activity 01"></li>
+<li>填写相关File name，如图<br><img src="/img/starting-another-activity-02.png" alt="Starting Another Activity 02"></li>
+<li>点击Finish</li>
+</ol>
+<p>值得注意的是，这里除了创建了选项中的相关文件外，还做了两件事</p>
+<ul>
+<li>自动实现了DisplayMessageActivity的onCreate方法，并且setContentView，将布局文件与Activity连接在一起。</li>
+<li>在Manifest配置文件中添加了以下代码<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">activity</span></span><br><span class="line">    <span class="attribute">android:name</span>=<span class="value">".DisplayMessageActivity"</span></span><br><span class="line">    <span class="attribute">android:label</span>=<span class="value">"@string/title_activity_display_message"</span></span><br><span class="line">    <span class="attribute">android:parentActivityName</span>=<span class="value">".MyActivity"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">        <span class="attribute">android:name</span>=<span class="value">"android.support.PARENT_ACTIVITY"</span></span><br><span class="line">        <span class="attribute">android:value</span>=<span class="value">"com.shawn.androidtrainingdemo.MyActivity"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>意思是在配置中声明一个Activity，<code>parentActivityName</code>指actionbar左上角返回按钮的点击后要返回的上级页面，只适用于API 16及更高，若要在更低版本实现这个效果，可以使用<code>support v7</code>包以及添加对应的<code>meta-data</code>。现在的AS非常智能，对于自动添加相关依赖的功能非常完善，所以我们只管写上相关代码，就会自动生成依赖。</p>
+<h2 id="为之前添加的Send按钮添加事件">为之前添加的Send按钮添加事件</h2><hr>
+<ol>
+<li><p>回到activity_my.xml布局中，修改button如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:onClick</span>=<span class="value">"sendMessage"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"@string/button_send"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开MyActivity.java文件，添加对应sendMessage方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Called when the user clicks the Send button */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Do something in response to button</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这是一种特殊写法，若想点击事件能顺利执行，方法必须满足</p>
+<ul>
+<li>方法为public</li>
+<li>返回为void</li>
+<li>参数只能有1个，为View类型，而传入的对象即为被点击的Button对象</li>
+</ul>
+<h2 id="建立Intent">建立Intent</h2><hr>
+<h3 id="1-_创建Intent">1. 创建Intent</h3><blockquote>
+<p>An Intent is an object that provides runtime binding between separate components (such as two activities). The Intent represents an app’s “intent to do something.” You can use intents for a wide variety of tasks, but most often they’re used to start another activity.<br>顾名思义，intent指”要去做什么”，它适用多种任务场景，这里我们用来在两个Activity之间通信。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, DisplayMessageActivity.class);</span><br></pre></td></tr></table></figure>
+<p>Intent构造函数包含两个参数，第一个为Android特有的上下文Context token，Activity是Context子类，所以我们用this，第二个为要使用这个Intent的组件类对象。（这里采取硬编码方式，是Intent提供的一种更高效的方式）</p>
+<h3 id="2-_通过findViewById()方法找到EditText，并得到其中的文字">2. 通过findViewById()方法找到EditText，并得到其中的文字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EditText editText = (EditText) findViewById(R.id.edit_message);</span><br><span class="line">String message = editText.getText().toString();</span><br></pre></td></tr></table></figure>
+<p>这里用到的<code>R.id.edit_message</code>是之前我们在布局文件中定义，并在<code>R文件</code>中自动生成的对应id。</p>
+<h3 id="3-_将信息存入Intent">3. 将信息存入Intent</h3><p>Intent可以以<code>key-value</code>形式存储信息，称为<code>extras</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intent.putExtra(EXTRA_MESSAGE, message);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">ActionBarActivity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String EXTRA_MESSAGE = MyActivity.class.getSimpleName();</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>我们在Activity通信中或者日常的Log中经常会用到本类的<code>类名</code>来唯一标示一些信息，如上面的代码。</p>
+<h3 id="4-_启动DisplayMessageActivity">4. 启动DisplayMessageActivity</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<p>完整代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, DisplayMessageActivity.class);</span><br><span class="line">        EditText editText = (EditText) findViewById(R.id.edit_message);</span><br><span class="line">        String message = editText.getText().toString();</span><br><span class="line">        intent.putExtra(EXTRA_MESSAGE, message);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="处理收到的Message">处理收到的Message</h2><hr>
+<h3 id="打开DisplayMessageActivity-java,在OnCreate方法内添加如下代码">打开DisplayMessageActivity.java,在OnCreate方法内添加如下代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get the message from the intent</span></span><br><span class="line">Intent intent = getIntent();</span><br><span class="line">String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create the text view</span></span><br><span class="line">TextView textView = <span class="keyword">new</span> TextView(<span class="keyword">this</span>);</span><br><span class="line">textView.setTextSize(<span class="number">40</span>);</span><br><span class="line">textView.setText(message);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the text view as the activity layout</span></span><br><span class="line">setContentView(textView);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>通过getIntent得到传入的Intent，通过个Message的<code>key</code>找到相关信息</li>
+<li>通过代码形式创建一个TextView(纯显示类文字控件)，设置字体大小40px，文字内容为传入的message</li>
+<li>设置这个Activity的contentView为刚刚创建的TextView</li>
+</ol>
+<blockquote>
+<p>需要注意的是<br>这里我们用代码形式生成控件，只是展示另外一种创建控件的方法，但是这样增加了布局与Java代码的耦合，不利于今后的迭代，所以还是推荐在XML中创建控件，并通过ID来操作控件</p>
+</blockquote>
+<p>运行App，并输入些内容，点击send按钮，观察效果。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这一课要实现点击Send Button开启新的Activity。</p>
+<h2 id="创建新的Activity">创建新的Activity</h2><hr>
+<ol>
+<li>右键你的activity所在目录，如图选择新建空Activity<br><img src="/]]>
+    </summary>
+    
+      <category term="Android Training" scheme="http://jesielin.github.io/tags/Android-Training/"/>
+    
+      <category term="开发" scheme="http://jesielin.github.io/tags/%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Android Training/Get Started" scheme="http://jesielin.github.io/categories/Android-Training-Get-Started/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Building A Simple User Interface]]></title>

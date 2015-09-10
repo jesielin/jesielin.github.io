@@ -105,7 +105,7 @@ ga('send', 'pageview');
     </div>
     <div class="article-info profile-block">
       <div class="article-info-block">
-        16
+        17
         <span>文章</span>
       </div>
       <div class="article-info-block">
@@ -132,6 +132,122 @@ ga('send', 'pageview');
 
       
       <section id="main">
+      <article id="post-android/training/starting-another-activity" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      
+	
+		<a href="/2015/09/10/android/training/starting-another-activity/" itemprop="url"><img src="/img/android-training-building-your-first-app-banner.png" class="article-banner"></a>
+	
+
+
+
+    
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/10/android/training/starting-another-activity/">Starting Another Activity</a>
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2015/09/10/android/training/starting-another-activity/">
+      <time datetime="2015-09-10T03:34:47.000Z" itemprop="datePublished">2015-09-10</time>
+    </a>
+  </div>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>这一课要实现点击Send Button开启新的Activity。</p>
+<h2 id="创建新的Activity">创建新的Activity</h2><hr>
+<ol>
+<li>右键你的activity所在目录，如图选择新建空Activity<br><img src="/img/starting-another-activity-01.png" alt="Starting Another Activity 01"></li>
+<li>填写相关File name，如图<br><img src="/img/starting-another-activity-02.png" alt="Starting Another Activity 02"></li>
+<li>点击Finish</li>
+</ol>
+<p>值得注意的是，这里除了创建了选项中的相关文件外，还做了两件事</p>
+<ul>
+<li>自动实现了DisplayMessageActivity的onCreate方法，并且setContentView，将布局文件与Activity连接在一起。</li>
+<li>在Manifest配置文件中添加了以下代码<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">activity</span></span><br><span class="line">    <span class="attribute">android:name</span>=<span class="value">".DisplayMessageActivity"</span></span><br><span class="line">    <span class="attribute">android:label</span>=<span class="value">"@string/title_activity_display_message"</span></span><br><span class="line">    <span class="attribute">android:parentActivityName</span>=<span class="value">".MyActivity"</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">        <span class="attribute">android:name</span>=<span class="value">"android.support.PARENT_ACTIVITY"</span></span><br><span class="line">        <span class="attribute">android:value</span>=<span class="value">"com.shawn.androidtrainingdemo.MyActivity"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">activity</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>意思是在配置中声明一个Activity，<code>parentActivityName</code>指actionbar左上角返回按钮的点击后要返回的上级页面，只适用于API 16及更高，若要在更低版本实现这个效果，可以使用<code>support v7</code>包以及添加对应的<code>meta-data</code>。现在的AS非常智能，对于自动添加相关依赖的功能非常完善，所以我们只管写上相关代码，就会自动生成依赖。</p>
+<h2 id="为之前添加的Send按钮添加事件">为之前添加的Send按钮添加事件</h2><hr>
+<ol>
+<li><p>回到activity_my.xml布局中，修改button如下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">Button</span></span><br><span class="line">        <span class="attribute">android:onClick</span>=<span class="value">"sendMessage"</span></span><br><span class="line">        <span class="attribute">android:layout_width</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:layout_height</span>=<span class="value">"wrap_content"</span></span><br><span class="line">        <span class="attribute">android:text</span>=<span class="value">"@string/button_send"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开MyActivity.java文件，添加对应sendMessage方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** Called when the user clicks the Send button */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Do something in response to button</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这是一种特殊写法，若想点击事件能顺利执行，方法必须满足</p>
+<ul>
+<li>方法为public</li>
+<li>返回为void</li>
+<li>参数只能有1个，为View类型，而传入的对象即为被点击的Button对象</li>
+</ul>
+<h2 id="建立Intent">建立Intent</h2><hr>
+<h3 id="1-_创建Intent">1. 创建Intent</h3><blockquote>
+<p>An Intent is an object that provides runtime binding between separate components (such as two activities). The Intent represents an app’s “intent to do something.” You can use intents for a wide variety of tasks, but most often they’re used to start another activity.<br>顾名思义，intent指”要去做什么”，它适用多种任务场景，这里我们用来在两个Activity之间通信。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, DisplayMessageActivity.class);</span><br></pre></td></tr></table></figure>
+<p>Intent构造函数包含两个参数，第一个为Android特有的上下文Context token，Activity是Context子类，所以我们用this，第二个为要使用这个Intent的组件类对象。（这里采取硬编码方式，是Intent提供的一种更高效的方式）</p>
+<h3 id="2-_通过findViewById()方法找到EditText，并得到其中的文字">2. 通过findViewById()方法找到EditText，并得到其中的文字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EditText editText = (EditText) findViewById(R.id.edit_message);</span><br><span class="line">String message = editText.getText().toString();</span><br></pre></td></tr></table></figure>
+<p>这里用到的<code>R.id.edit_message</code>是之前我们在布局文件中定义，并在<code>R文件</code>中自动生成的对应id。</p>
+<h3 id="3-_将信息存入Intent">3. 将信息存入Intent</h3><p>Intent可以以<code>key-value</code>形式存储信息，称为<code>extras</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intent.putExtra(EXTRA_MESSAGE, message);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyActivity</span> <span class="keyword">extends</span> <span class="title">ActionBarActivity</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">static</span> String EXTRA_MESSAGE = MyActivity.class.getSimpleName();</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>我们在Activity通信中或者日常的Log中经常会用到本类的<code>类名</code>来唯一标示一些信息，如上面的代码。</p>
+<h3 id="4-_启动DisplayMessageActivity">4. 启动DisplayMessageActivity</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startActivity(intent);</span><br></pre></td></tr></table></figure>
+<p>完整代码如下<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(View view)</span> </span>&#123;</span><br><span class="line">        Intent intent = <span class="keyword">new</span> Intent(<span class="keyword">this</span>, DisplayMessageActivity.class);</span><br><span class="line">        EditText editText = (EditText) findViewById(R.id.edit_message);</span><br><span class="line">        String message = editText.getText().toString();</span><br><span class="line">        intent.putExtra(EXTRA_MESSAGE, message);</span><br><span class="line">        startActivity(intent);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="处理收到的Message">处理收到的Message</h2><hr>
+<h3 id="打开DisplayMessageActivity-java,在OnCreate方法内添加如下代码">打开DisplayMessageActivity.java,在OnCreate方法内添加如下代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Get the message from the intent</span></span><br><span class="line">Intent intent = getIntent();</span><br><span class="line">String message = intent.getStringExtra(MyActivity.EXTRA_MESSAGE);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create the text view</span></span><br><span class="line">TextView textView = <span class="keyword">new</span> TextView(<span class="keyword">this</span>);</span><br><span class="line">textView.setTextSize(<span class="number">40</span>);</span><br><span class="line">textView.setText(message);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the text view as the activity layout</span></span><br><span class="line">setContentView(textView);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>通过getIntent得到传入的Intent，通过个Message的<code>key</code>找到相关信息</li>
+<li>通过代码形式创建一个TextView(纯显示类文字控件)，设置字体大小40px，文字内容为传入的message</li>
+<li>设置这个Activity的contentView为刚刚创建的TextView</li>
+</ol>
+<blockquote>
+<p>需要注意的是<br>这里我们用代码形式生成控件，只是展示另外一种创建控件的方法，但是这样增加了布局与Java代码的耦合，不利于今后的迭代，所以还是推荐在XML中创建控件，并通过ID来操作控件</p>
+</blockquote>
+<p>运行App，并输入些内容，点击send按钮，观察效果。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jesielin.github.io/2015/09/10/android/training/starting-another-activity/" data-id="ciedwsav7002nkv4jvjpu1diw" class="article-share-link">分享到</a>
+      
+        <a href="http://jesielin.github.io/2015/09/10/android/training/starting-another-activity/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android-Training/">Android Training</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发/">开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+    
       <article id="post-android/training/building-a-simple-user-interface" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -219,7 +335,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/" data-id="cie1ov17m002yfp4jef1tar2x" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/" data-id="ciedwsavg0032kv4jr8lk0qrk" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/09/01/android/training/building-a-simple-user-interface/#ds-thread" class="article-comment-link">评论</a>
       
@@ -315,7 +431,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="cie1ov17g002nfp4jl851znfc" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/09/01/android/training/running-your-app/" data-id="ciedwsava002ukv4j39otb9w6" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/09/01/android/training/running-your-app/#ds-thread" class="article-comment-link">评论</a>
       
@@ -440,7 +556,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/" data-id="cie1ov17j002ufp4jwsbgx7un" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/" data-id="ciedwsavd002ykv4jzenveazj" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/30/android/training/creating-an-android-project/#ds-thread" class="article-comment-link">评论</a>
       
@@ -578,7 +694,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="cie1ov16h000efp4j0nz03t46" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/" data-id="ciedwsau9000ekv4jx1zn9znv" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/08/29/wiki/cmd-markdown/#ds-thread" class="article-comment-link">评论</a>
       
@@ -635,74 +751,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="cie1ov17a0028fp4jha1im4ze" class="article-share-link">分享到</a>
+      <a data-url="http://jesielin.github.io/2015/03/10/sketch/first/" data-id="ciedwsav20028kv4jzjn19x3x" class="article-share-link">分享到</a>
       
         <a href="http://jesielin.github.io/2015/03/10/sketch/first/#ds-thread" class="article-comment-link">评论</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/night/">night</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-    
-      <article id="post-sketch/is-dota-kidding" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/06/08/sketch/is-dota-kidding/">在这个年纪，打DOTA冲分有那么可笑么？</a>
-    </h1>
-  
-
-        <div class="article-meta">
-          
-  <div class="article-date">
-    <i class="fa fa-calendar"></i>
-    <a href="/2014/06/08/sketch/is-dota-kidding/">
-      <time datetime="2014-06-08T03:50:07.000Z" itemprop="datePublished">2014-06-08</time>
-    </a>
-  </div>
-
-
-          
-  <div class="article-category">
-  	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
-  </div>
-
-        </div>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-                
-        <p>大学四年，毕业两年，6年dota，总是在最无助的时候让心灵得到一丝安宁的东西，烟和dota。</p>
-<p>我不知道dota对别人的意义是什么，一盘dota，在最多不超过1个半小时的时间里，仿佛经历了一个小人生，每盘都推倒重建，从1级到25级，不仅开始是新的，同样结局也是，不同的人生错落在混沌中，彼此藕断丝连。每盘都有不同的风景，经历不同的人和事，处理各种不同的情况，感受复杂的心情，完胜的喜悦，屠杀的疯狂，均势的辗转，被虐的悲愤，队友离场的痛苦，守护的冰封王座倒下站起，站起倒下，教会了我许多，人生是没办法假设的，但dota可以，甚至可以重演，在dota里，”假如老天再给我一次机会”变得不再是不可能完成的任务。</p>
-<p>可作为一个成熟的人不禁会想，人生不容假设，有时候错过就再没办法补救，而dota可以，那是不是应该躲在dota那种给人重新感受人生价值的幻觉中暗自欢愉？答案是否定的。但这也挡不住我们爱它。</p>
-<p>人怎么可以沉浸在游戏中而忘了真实的人生。长辈们常说这句话，你这样是不行的。</p>
-<p>不仅长辈，某种令人作呕的腐朽气息蔓延到同辈中，种种犬儒扑面而来，错过了组战队，错过了冲分，人有的梦想很大，有的梦想很小，就像学吉他一样，一首歌的熟练总能带来若干首歌的无师自通，梦想同样，小的梦想的成功或失败，总能汇聚成无形的力量在最后的大结局中得到体现，6年中，支离破碎的时间片段中，总能回忆起千百次我对身边的朋友表达我在dota的世界里是有想法的，我想冲分，你们陪我好不好，但总是不能善终。我知道这并不值得埋怨，自己也很无能，分不清方向，抓不住重点，总是随波逐流，不停的奔波，却又不知道在奔波什么，又或许游戏真的就只是游戏，大家只是想乐一乐，别无他想，这也是有道理的，当兴趣变成职业的时候总有那么一丝的惆怅，退言之，往往是大家最开始接触这款游戏的时候，才是最欢乐的时候，无知带来的愉悦可以让人获得最大的满足感。</p>
-<p>事情都不值得埋怨，却值得思考，毕业后的两年，重复的离开和回归dota，不知道多少次之后，莫名的，我觉得我真的离不开这款游戏，或者，这款游戏。不管他是游戏也好，游戏也好，或者我真的不能天天沉浸其中，我还是想说，我离不开这款游戏。无论你们怎么说，这里面有我破碎的小梦想，即使他无足轻重，即使他在不久后有可能逝去，可我就是要说，我离不开他。</p>
-<p>真正投入其中的短短片刻，请你不要调侃，天真的人看不懂你那厚黑的话语背后隐藏的秘密，我只想享受沉浸其中的片刻安宁，我只想在这片刻中怀揣着过去的小梦想经历曾经错过的过程</p>
-<p>我只想说，这个年纪，玩一款游戏，冲个分，并不可笑！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/" data-id="cie1ov1770021fp4j7ta0qitm" class="article-share-link">分享到</a>
-      
-        <a href="http://jesielin.github.io/2014/06/08/sketch/is-dota-kidding/#ds-thread" class="article-comment-link">评论</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/day/">day</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dota/">dota</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/past/">past</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
 
     </footer>
   </div>
@@ -724,6 +778,23 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              <a href="/2015/09/10/android/training/starting-another-activity/" class="thumbnail">
+  
+    <span style="background-image:url(/img/android-thumbnail.png)" alt="Starting Another Activity" class="thumbnail-image"></span>
+  
+</a>
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a></p>
+              <p class="item-title"><a href="/2015/09/10/android/training/starting-another-activity/" class="title">Starting Another Activity</a></p>
+              <p class="item-date"><time datetime="2015-09-10T03:34:47.000Z" itemprop="datePublished">2015-09-10</time></p>
+            </div>
+          </li>
         
           <li>
             
@@ -794,23 +865,6 @@ ga('send', 'pageview');
             </div>
           </li>
         
-          <li>
-            
-            <div class="item-thumbnail">
-              <a href="/2015/03/10/sketch/first/" class="thumbnail">
-  
-    <span class="thumbnail-image thumbnail-none"></span>
-  
-</a>
-            </div>
-            
-            <div class="item-inner">
-              <p class="item-category"><a class="article-category-link" href="/categories/随笔/">随笔</a></p>
-              <p class="item-title"><a href="/2015/03/10/sketch/first/" class="title">第一篇啊</a></p>
-              <p class="item-date"><time datetime="2015-03-09T18:58:06.000Z" itemprop="datePublished">2015-03-10</time></p>
-            </div>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -820,7 +874,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android-Training-Get-Started/">Android Training/Get Started</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/wiki/">wiki</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/书摘/">书摘</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">11</span></li></ul>
     </div>
   </div>
 
